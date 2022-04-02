@@ -1,0 +1,17 @@
+Changes to be made from last year's talk:
+    Include bit on simulations of both kinds at the start
+    Rewrite to include our generalised McKendrick-von Foerster eqns
+        Standardise form of equations: diff. eqs. should be analytic
+        Boundary conditions should be more complicated than Cauchy
+        Solution method should be done in terms of Laplace transforms
+        (NOT variation of parameters!)
+    Include our solutions for <n> and numerical comparison
+        (maybe a bit on generating functions)
+    Finally, include some discussion of experimental study on recurrence in
+        specific therapies
+
+    Stylistic points:
+        More minimalistic slide layout. No links or name etc.
+        More whitespace on slides: EITHER image OR list.
+
+20 minutes at ~2 mins per slide = about 10 slides.
