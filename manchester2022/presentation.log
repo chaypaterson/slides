@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.1.16)  2 APR 2022 14:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.4.3)  3 APR 2022 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,98 +480,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-Package: sansmathaccent 2020/01/31
-
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2020/09/21 v3.32 KOMA-Script package (file load hooks)
-
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2020/09/21 v3.32 KOMA-Script package (using LaTeX hooks)
-
-
-LaTeX3 Info: Defining command \BeforeFile with sig. 'm' on line 61.
-
-
-LaTeX3 Info: Defining command \AfterFile with sig. 'm' on line 65.
-
-
-LaTeX3 Info: Defining command \BeforeClass with sig. 'm' on line 69.
-
-
-LaTeX3 Info: Defining command \BeforePackage with sig. 'm' on line 73.
-
-
-LaTeX3 Info: Defining command \AfterAtEndOfClass with sig. 'smo+m' on line 83.
-
-
-LaTeX3 Info: Defining command \AfterAtEndOfPackage with sig. 'smo+m' on line
-(LaTeX3)     93.
-
-
-LaTeX3 Info: Defining command \scrlfile@AfterClass with sig. 'smo+m' on line
-(LaTeX3)     173.
-
-
-LaTeX3 Info: Defining command \AfterClass with sig. '' on line 174.
-
-
-LaTeX3 Info: Defining command \scrlfile@AfterPackage with sig. 'smo+m' on line
-(LaTeX3)     191.
-
-
-LaTeX3 Info: Defining command \AfterPackage with sig. '' on line 192.
-
-
-LaTeX3 Info: Defining command \ReplaceInput with sig. '' on line 193.
-
-
-LaTeX3 Info: Defining command \ReplaceClass with sig. 'mm' on line 196.
-
-
-LaTeX3 Info: Defining command \ReplacePackage with sig. 'mm' on line 199.
-
-
-LaTeX3 Info: Defining command \UnReplaceInput with sig. '' on line 200.
-
-
-LaTeX3 Info: Defining command \UnReplaceClass with sig. 'm' on line 203.
-
-
-LaTeX3 Info: Defining command \UnReplacePackage with sig. 'mm' on line 206.
-
-
-LaTeX3 Info: Defining command \PreventPackageFromLoading with sig. 's+om' on
-(LaTeX3)     line 234.
-
-
-LaTeX3 Info: Defining command \StorePreventPackageFromLoading with sig. 'm' on
-(LaTeX3)     line 242.
-
-
-LaTeX3 Info: Defining command \ResetPreventPackageFromLoading with sig. '' on
-(LaTeX3)     line 247.
-
-
-LaTeX3 Info: Defining command \UnPreventPackageFromLoading with sig. 'sm' on
-(LaTeX3)     line 261.
-
-
-LaTeX3 Info: Defining command \BeforeClosingMainAux with sig. 'om' on line
-(LaTeX3)     274.
-
-
-LaTeX3 Info: Defining command \AfterReadingMainAux with sig. 'om' on line 287.
-
-
-LaTeX3 Info: Defining command \protected@immediate@write with sig. 'm+m+m' on
-(LaTeX3)     line 298.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2020/09/21 v3.32 KOMA-Script package (logo)
-)))))
+)))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2020-08-03 v1.12c Easy translation of strings in LaTeX
@@ -936,16 +845,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 46.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 46.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 46.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 4
-6.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 4
-6.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -988,15 +887,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 108
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 108.
-
-(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
-)
-[2
+) [2
 
  <./figures/diagram1.pdf>]
 <figures/HeLaCell_wellcometrust.jpg, id=36, 762.85pt x 756.8275pt>
@@ -1013,8 +904,7 @@ File: figures/HeLaCell_wellcometrust.jpg Graphic file (type jpg)
 Package pdftex.def Info: figures/HeLaCell_wellcometrust.jpg  used on input line
  185.
 (pdftex.def)             Requested size: 153.64493pt x 152.42525pt.
-
-[4
+ [4
 
 ]
 <figures/diagram2b.pdf, id=49, 850.20749pt x 38.24821pt>
@@ -1057,12 +947,12 @@ Package pdftex.def Info: figures/diagram4.pdf  used on input line 307.
  [7
 
  <./figures/diagram4.pdf>]
-<figures/diagram4b.pdf, id=81, 613.94751pt x 247.50604pt>
+<figures/diagram4b.pdf, id=80, 613.94751pt x 247.50604pt>
 File: figures/diagram4b.pdf Graphic file (type pdf)
 <use figures/diagram4b.pdf>
 Package pdftex.def Info: figures/diagram4b.pdf  used on input line 330.
 (pdftex.def)             Requested size: 307.28987pt x 123.88112pt.
-<figures/forbidden.pdf, id=82, 78.63527pt x 209.12393pt>
+<figures/forbidden.pdf, id=81, 78.63527pt x 209.12393pt>
 File: figures/forbidden.pdf Graphic file (type pdf)
 <use figures/forbidden.pdf>
 Package pdftex.def Info: figures/forbidden.pdf  used on input line 330.
@@ -1074,7 +964,7 @@ Package pdftex.def Info: figures/forbidden.pdf  used on input line 330.
 pdfTeX warning: pdflatex (file ./figures/forbidden.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
 >]
-<figures/diagram4c.pdf, id=91, 224.04486pt x 228.27417pt>
+<figures/diagram4c.pdf, id=90, 224.04486pt x 228.27417pt>
 File: figures/diagram4c.pdf Graphic file (type pdf)
 <use figures/diagram4c.pdf>
 Package pdftex.def Info: figures/diagram4c.pdf  used on input line 350.
@@ -1082,7 +972,7 @@ Package pdftex.def Info: figures/diagram4c.pdf  used on input line 350.
  [9
 
  <./figures/diagram4c.pdf>]
-<figures/diagram5.pdf, id=99, 581.36577pt x 232.59811pt>
+<figures/diagram5.pdf, id=98, 581.36577pt x 232.59811pt>
 File: figures/diagram5.pdf Graphic file (type pdf)
 <use figures/diagram5.pdf>
 Package pdftex.def Info: figures/diagram5.pdf  used on input line 373.
@@ -1090,7 +980,7 @@ Package pdftex.def Info: figures/diagram5.pdf  used on input line 373.
  [10
 
  <./figures/diagram5.pdf>]
-<figures/cubegraph4-3.pdf, id=107, 867.52101pt x 807.32132pt>
+<figures/cubegraph4-3.pdf, id=106, 867.52101pt x 807.32132pt>
 File: figures/cubegraph4-3.pdf Graphic file (type pdf)
 <use figures/cubegraph4-3.pdf>
 Package pdftex.def Info: figures/cubegraph4-3.pdf  used on input line 382.
@@ -1098,7 +988,7 @@ Package pdftex.def Info: figures/cubegraph4-3.pdf  used on input line 382.
  [11
 
  <./figures/cubegraph4-3.pdf>]
-<figures/diagram6.pdf, id=115, 929.4725pt x 477.785pt>
+<figures/diagram6.pdf, id=114, 929.4725pt x 477.785pt>
 File: figures/diagram6.pdf Graphic file (type pdf)
 <use figures/diagram6.pdf>
 Package pdftex.def Info: figures/diagram6.pdf  used on input line 402.
@@ -1106,7 +996,7 @@ Package pdftex.def Info: figures/diagram6.pdf  used on input line 402.
  [12
 
  <./figures/diagram6.pdf>]
-<figures/diagram7.pdf, id=123, 519.0929pt x 240.57631pt>
+<figures/diagram7.pdf, id=122, 519.0929pt x 240.57631pt>
 File: figures/diagram7.pdf Graphic file (type pdf)
 <use figures/diagram7.pdf>
 Package pdftex.def Info: figures/diagram7.pdf  used on input line 422.
@@ -1114,7 +1004,7 @@ Package pdftex.def Info: figures/diagram7.pdf  used on input line 422.
  [13
 
  <./figures/diagram7.pdf>]
-<figures/F2.large.jpg, id=132, 308.352pt x 302.0886pt>
+<figures/F2.large.jpg, id=131, 308.352pt x 302.0886pt>
 File: figures/F2.large.jpg Graphic file (type jpg)
 <use figures/F2.large.jpg>
 Package pdftex.def Info: figures/F2.large.jpg  used on input line 447.
@@ -1125,7 +1015,7 @@ Package pdftex.def Info: figures/F2.large.jpg  used on input line 447.
  <./figures/F2.large.jpg>] [15
 
 ]
-<figures/1280px-Sun_(Earth_POV).jpg, id=145, 1284.8pt x 963.6pt>
+<figures/1280px-Sun_(Earth_POV).jpg, id=143, 1284.8pt x 963.6pt>
 File: figures/1280px-Sun_(Earth_POV).jpg Graphic file (type jpg)
 <use figures/1280px-Sun_(Earth_POV).jpg>
 Package pdftex.def Info: figures/1280px-Sun_(Earth_POV).jpg  used on input line
@@ -1139,7 +1029,7 @@ Package pdftex.def Info: figures/1280px-Sun_(Earth_POV).jpg  used on input line
 ]
 contour: Using real outline for `rare and benign' on input line 536.
 contour: Using real outline for ` high quality data' on input line 536.
-<figures/SOLARECLIPSE2021FORDISTROHighRes.jpg, id=156, 462.0462pt x 369.7815pt>
+<figures/SOLARECLIPSE2021FORDISTROHighRes.jpg, id=154, 462.0462pt x 369.7815pt>
 
 File: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg Graphic file (type jpg)
 <use figures/SOLARECLIPSE2021FORDISTROHighRes.jpg>
@@ -1151,31 +1041,36 @@ input line 536.
  <./figures/SOLARECLIPSE2021FORDISTROHighRes.jpg>]
 File: figures/diagram3.pdf Graphic file (type pdf)
 <use figures/diagram3.pdf>
-Package pdftex.def Info: figures/diagram3.pdf  used on input line 566.
+Package pdftex.def Info: figures/diagram3.pdf  used on input line 572.
 (pdftex.def)             Requested size: 152.10931pt x 47.0905pt.
+<figures/DGREvans2005.pdf, id=160, 481.82408pt x 261.32831pt>
+File: figures/DGREvans2005.pdf Graphic file (type pdf)
+<use figures/DGREvans2005.pdf>
+Package pdftex.def Info: figures/DGREvans2005.pdf  used on input line 572.
+(pdftex.def)             Requested size: 152.10931pt x 82.49828pt.
  [19
 
-]
-<figures/vsmodel-nochromosomes.pdf, id=168, 256.6234pt x 395.43054pt>
+ <./figures/DGREvans2005.pdf>]
+<figures/vsmodel-nochromosomes.pdf, id=171, 256.6234pt x 395.43054pt>
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-610.
+616.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
  [20
 
  <./figures/vsmodel-nochromosomes.pdf>]
-Overfull \hbox (12.21786pt too wide) detected at line 650
-\OT1/mathkerncmss/m/sl/10.95 P\OT1/cmss/m/n/10.95 ([][]\U/msa/m/n/10.95 ^^C\OT1
-/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Y \OT1/mathkerncmss/m/sl/10.95 N[]\OML/
-cmm/m/it/10.95 ^^V[]\OT1/mathkerncmss/m/sl/10.95 r[][]\OML/cmm/m/it/10.95 ^^V[]
-[] \OMS/cmsy/m/n/10.95 ^^B \OT1/cmss/m/n/10.95 6
+Overfull \hbox (12.21786pt too wide) detected at line 656
+\OT1/cmss/m/it/10.95 P\OT1/cmss/m/n/10.95 ([][]\U/msa/m/n/10.95 ^^C\OT1/cmss/m/
+n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmss/m/it/10.95 N[]\OML/cmm/m/it/10.95 ^
+^V[]\OT1/cmss/m/it/10.95 r[][]\OML/cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^
+^B \OT1/cmss/m/n/10.95 6
  []
 
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-650.
+656.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
 [21
 
@@ -1183,7 +1078,7 @@ Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-699.
+705.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
  [22
 
@@ -1191,7 +1086,7 @@ Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-740.
+746.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
  [23
 
@@ -1199,55 +1094,55 @@ Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-755.
+761.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
-<figures/figure-5-3Hit-feb22.pdf, id=193, 398.90863pt x 323.0136pt>
+<figures/figure-5-3Hit-feb22.pdf, id=195, 398.90863pt x 323.0136pt>
 File: figures/figure-5-3Hit-feb22.pdf Graphic file (type pdf)
 <use figures/figure-5-3Hit-feb22.pdf>
-Package pdftex.def Info: figures/figure-5-3Hit-feb22.pdf  used on input line 75
-5.
+Package pdftex.def Info: figures/figure-5-3Hit-feb22.pdf  used on input line 76
+1.
 (pdftex.def)             Requested size: 153.64493pt x 124.41237pt.
  [24
 
  <./figures/figure-5-3Hit-feb22.pdf>]
-<figures/Fig3-combined-bw-feb22.pdf, id=393, 316.72368pt x 308.33333pt>
+<figures/Fig3-combined-bw-feb22.pdf, id=395, 316.72368pt x 308.33333pt>
 File: figures/Fig3-combined-bw-feb22.pdf Graphic file (type pdf)
 <use figures/Fig3-combined-bw-feb22.pdf>
 Package pdftex.def Info: figures/Fig3-combined-bw-feb22.pdf  used on input line
- 769.
+ 775.
 (pdftex.def)             Requested size: 235.00494pt x 228.77626pt.
 
-Overfull \vbox (25.2698pt too high) detected at line 769
+Overfull \vbox (25.2698pt too high) detected at line 775
  []
 
 [25
 
  <./figures/Fig3-combined-bw-feb22.pdf>]
-<figures/AKDemetriades_Fig5C.png, id=976, 501.875pt x 476.78125pt>
+<figures/AKDemetriades_Fig5C.png, id=978, 501.875pt x 476.78125pt>
 File: figures/AKDemetriades_Fig5C.png Graphic file (type png)
 <use figures/AKDemetriades_Fig5C.png>
-Package pdftex.def Info: figures/AKDemetriades_Fig5C.png  used on input line 78
-9.
+Package pdftex.def Info: figures/AKDemetriades_Fig5C.png  used on input line 79
+5.
 (pdftex.def)             Requested size: 153.64493pt x 145.96005pt.
-<figures/AKDemetriades_Fig4C.png, id=977, 491.8375pt x 585.18625pt>
+<figures/AKDemetriades_Fig4C.png, id=979, 491.8375pt x 585.18625pt>
 File: figures/AKDemetriades_Fig4C.png Graphic file (type png)
 <use figures/AKDemetriades_Fig4C.png>
-Package pdftex.def Info: figures/AKDemetriades_Fig4C.png  used on input line 78
-9.
+Package pdftex.def Info: figures/AKDemetriades_Fig4C.png  used on input line 79
+5.
 (pdftex.def)             Requested size: 153.64493pt x 182.80774pt.
  [26
 
  <./figures/AKDemetriades_Fig5C.png> <./figures/AKDemetriades_Fig4C.png>]
-<figures/malignancy-oncogene.pdf, id=983, 198.25833pt x 58.37782pt>
+<figures/malignancy-oncogene.pdf, id=985, 198.25833pt x 58.37782pt>
 File: figures/malignancy-oncogene.pdf Graphic file (type pdf)
 <use figures/malignancy-oncogene.pdf>
-Package pdftex.def Info: figures/malignancy-oncogene.pdf  used on input line 82
-9.
+Package pdftex.def Info: figures/malignancy-oncogene.pdf  used on input line 83
+5.
 (pdftex.def)             Requested size: 153.64493pt x 45.24232pt.
-<figures/malignancy.pdf, id=984, 231.39554pt x 198.99158pt>
+<figures/malignancy.pdf, id=986, 231.39554pt x 198.99158pt>
 File: figures/malignancy.pdf Graphic file (type pdf)
 <use figures/malignancy.pdf>
-Package pdftex.def Info: figures/malignancy.pdf  used on input line 829.
+Package pdftex.def Info: figures/malignancy.pdf  used on input line 835.
 (pdftex.def)             Requested size: 153.64493pt x 132.13037pt.
  [27
 
@@ -1259,36 +1154,36 @@ le pdfs with page group included in a single page
 File: figures/malignancy-oncogene.pdf Graphic file (type pdf)
 <use figures/malignancy-oncogene.pdf>
 Package pdftex.def Info: figures/malignancy-oncogene.pdf  used on input line 85
-1.
+7.
 (pdftex.def)             Requested size: 153.64493pt x 45.24232pt.
-<figures/DiameterOncogene-feb21.pdf, id=993, 260.975pt x 250.9375pt>
+<figures/DiameterOncogene-feb21.pdf, id=995, 260.975pt x 250.9375pt>
 File: figures/DiameterOncogene-feb21.pdf Graphic file (type pdf)
 <use figures/DiameterOncogene-feb21.pdf>
 Package pdftex.def Info: figures/DiameterOncogene-feb21.pdf  used on input line
- 851.
+ 857.
 (pdftex.def)             Requested size: 153.64493pt x 147.73785pt.
  [28
 
  <./figures/DiameterOncogene-feb21.pdf>]
 File: figures/malignancy.pdf Graphic file (type pdf)
 <use figures/malignancy.pdf>
-Package pdftex.def Info: figures/malignancy.pdf  used on input line 870.
+Package pdftex.def Info: figures/malignancy.pdf  used on input line 876.
 (pdftex.def)             Requested size: 138.2795pt x 118.91612pt.
-<figures/DiameterTS-oct21.pdf, id=1018, 462.52798pt x 346.89601pt>
+<figures/DiameterTS-oct21.pdf, id=1020, 462.52798pt x 346.89601pt>
 File: figures/DiameterTS-oct21.pdf Graphic file (type pdf)
 <use figures/DiameterTS-oct21.pdf>
-Package pdftex.def Info: figures/DiameterTS-oct21.pdf  used on input line 870.
+Package pdftex.def Info: figures/DiameterTS-oct21.pdf  used on input line 876.
 (pdftex.def)             Requested size: 169.01036pt x 126.75626pt.
  [29
 
  <./figures/DiameterTS-oct21.pdf>]
-<figures/TSXhistogram.pdf, id=1057, 152.3596pt x 152.3596pt>
+<figures/TSXhistogram.pdf, id=1059, 152.3596pt x 152.3596pt>
 File: figures/TSXhistogram.pdf Graphic file (type pdf)
 <use figures/TSXhistogram.pdf>
-Package pdftex.def Info: figures/TSXhistogram.pdf  used on input line 894.
+Package pdftex.def Info: figures/TSXhistogram.pdf  used on input line 900.
 (pdftex.def)             Requested size: 153.64493pt x 153.65877pt.
 
-Overfull \vbox (28.09088pt too high) detected at line 894
+Overfull \vbox (28.09088pt too high) detected at line 900
  []
 
 [30
@@ -1297,55 +1192,69 @@ Overfull \vbox (28.09088pt too high) detected at line 894
 <figures/radiation-model.pdf, id=1233, 250.9383pt x 224.76176pt>
 File: figures/radiation-model.pdf Graphic file (type pdf)
 <use figures/radiation-model.pdf>
-Package pdftex.def Info: figures/radiation-model.pdf  used on input line 918.
+Package pdftex.def Info: figures/radiation-model.pdf  used on input line 924.
 (pdftex.def)             Requested size: 153.64493pt x 137.61546pt.
  [31
 
  <./figures/radiation-model.pdf>]
-File: figures/radiation-model.pdf Graphic file (type pdf)
-<use figures/radiation-model.pdf>
-Package pdftex.def Info: figures/radiation-model.pdf  used on input line 937.
-(pdftex.def)             Requested size: 153.64493pt x 137.61546pt.
-<figures/SecondHitVariousTS-oct21.pdf, id=1243, 294.80365pt x 316.49911pt>
-File: figures/SecondHitVariousTS-oct21.pdf Graphic file (type pdf)
-<use figures/SecondHitVariousTS-oct21.pdf>
-Package pdftex.def Info: figures/SecondHitVariousTS-oct21.pdf  used on input li
-ne 937.
-(pdftex.def)             Requested size: 153.64493pt x 164.95235pt.
+<figures/MObeidat2018.pdf, id=1242, 199.11288pt x 110.73872pt>
+File: figures/MObeidat2018.pdf Graphic file (type pdf)
+<use figures/MObeidat2018.pdf>
+Package pdftex.def Info: figures/MObeidat2018.pdf  used on input line 932.
+(pdftex.def)             Requested size: 230.46739pt x 128.17819pt.
  [32
 
- <./figures/SecondHitVariousTS-oct21.pdf>] [33
+ <./figures/MObeidat2018.pdf>] [33
 
 ] [34
 
 ] [35
 
-] [36
+]
+File: figures/radiation-model.pdf Graphic file (type pdf)
+<use figures/radiation-model.pdf>
+Package pdftex.def Info: figures/radiation-model.pdf  used on input line 982.
+(pdftex.def)             Requested size: 153.64493pt x 137.61546pt.
+<figures/SecondHitVariousTS-oct21.pdf, id=1271, 294.80365pt x 316.49911pt>
+File: figures/SecondHitVariousTS-oct21.pdf Graphic file (type pdf)
+<use figures/SecondHitVariousTS-oct21.pdf>
+Package pdftex.def Info: figures/SecondHitVariousTS-oct21.pdf  used on input li
+ne 982.
+(pdftex.def)             Requested size: 153.64493pt x 164.95235pt.
+ [36
+
+ <./figures/SecondHitVariousTS-oct21.pdf>] [37
+
+] [38
+
+] [39
+
+] [40
 
 ]
-<figures/logo_big.jpg, id=1308, 501.875pt x 226.8475pt>
+<figures/logo_big.jpg, id=1336, 501.875pt x 226.8475pt>
 File: figures/logo_big.jpg Graphic file (type jpg)
 <use figures/logo_big.jpg>
-Package pdftex.def Info: figures/logo_big.jpg  used on input line 1088.
+Package pdftex.def Info: figures/logo_big.jpg  used on input line 1133.
 (pdftex.def)             Requested size: 153.64493pt x 69.44626pt.
 
 
 pdfTeX warning: pdflatex (file ./figures/W-Logo_Purple1.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<figures/W-Logo_Purple1.pdf, id=1309, 108.405pt x 72.89233pt>
+<figures/W-Logo_Purple1.pdf, id=1337, 108.405pt x 72.89233pt>
 File: figures/W-Logo_Purple1.pdf Graphic file (type pdf)
 <use figures/W-Logo_Purple1.pdf>
-Package pdftex.def Info: figures/W-Logo_Purple1.pdf  used on input line 1088.
+Package pdftex.def Info: figures/W-Logo_Purple1.pdf  used on input line 1133.
 (pdftex.def)             Requested size: 61.45703pt x 41.32437pt.
-[37
+[41
 
  <./figures/logo_big.jpg> <./figures/W-Logo_Purple1.pdf>]
 File: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg Graphic file (type jpg)
 <use figures/SOLARECLIPSE2021FORDISTROHighRes.jpg>
 Package pdftex.def Info: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg  used on 
-input line 1110.
+input line 1155.
 (pdftex.def)             Requested size: 364.19536pt x 291.4753pt.
- [38
+ [42
 
 ]
 \tf@nav=\write6
@@ -1363,13 +1272,13 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18865 strings out of 481176
- 361906 string characters out of 5914226
- 656864 words of memory out of 5000000
- 35230 multiletter control sequences out of 15000+600000
- 425358 words of font info for 104 fonts, out of 8000000 for 9000
- 59 hyphenation exceptions out of 8191
- 131i,13n,132p,436b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18704 strings out of 481252
+ 357518 string characters out of 5915889
+ 652961 words of memory out of 5000000
+ 35071 multiletter control sequences out of 15000+600000
+ 423137 words of font info for 99 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 112i,13n,116p,436b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -1388,10 +1297,10 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on presentation.pdf (38 pages, 2333524 bytes).
+Output written on presentation.pdf (42 pages, 2723628 bytes).
 PDF statistics:
- 1412 PDF objects out of 1440 (max. 8388607)
- 933 compressed objects within 10 object streams
- 77 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1436 PDF objects out of 1440 (max. 8388607)
+ 949 compressed objects within 10 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 
