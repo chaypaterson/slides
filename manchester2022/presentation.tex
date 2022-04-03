@@ -341,8 +341,7 @@
             Assign rates to events:
         \begin{itemize}
             \item Get $\mu_{gene}$ from $n_{gene} \times u \times b$
-            \item To get $n_{gene}$, count possible nonsense codons in a
-            known sequence
+            \item To get $n_{gene}$, count possible nonsense mutations
             \item Fix $r_{LOH}$ by looking at relative frequency of LOH
         \end{itemize}
         \end{column}
@@ -561,6 +560,9 @@
         % graph with our model/data
         % Graph with incidence?
         \includegraphics[width=0.99\textwidth]{figures/DGREvans2005}
+        \begin{center}
+            \small{Gareth Evans 2005\footnotemark[2]}
+        \end{center}
         \end{column}
     \end{columns}
 
@@ -904,10 +906,6 @@
     \framesubtitle{Radiation}
     % TODO is this tumour initation or promotion?
 
-    \begin{center}
-        \tiny{Why do we care about \emph{TSX} anyway?}
-    \end{center}
-
     \begin{columns}
         \begin{column}{0.5\textwidth}
         \includegraphics[width=\textwidth]{figures/radiation-model}
@@ -919,6 +917,8 @@
             \item DSB misrepair $\varepsilon(D)$
             \item cell survival $S(D)$
         \end{itemize}
+
+        + $m_{TSX}$ num. sensitive sites on \emph{TSX}
         \end{column}
     \end{columns}
 \end{frame}
@@ -926,9 +926,14 @@
 % DSB induction: 
 \begin{frame}
     \frametitle{DSB induction model}
+    \framesubtitle{Prob. DSB on a single b.p.}
     \begin{center}
         \includegraphics[width=0.75\textwidth]{figures/MObeidat2018}
     \end{center}
+    \begin{equation*}
+        p_{DSB} \approx k D, \quad k = 3.9\times 10^{-7} \mathrm{/Gy /bp}
+    \end{equation*}
+\footnotetext[1]{M. Obeidat et~al., Med. Phys. 45 (7), July 2018}
 \end{frame}
 
 \begin{frame}
@@ -936,30 +941,55 @@
 
     \begin{itemize}
         \item Should be dose dependent $\varepsilon(D)$...
-        \item Maybe also dose-\emph{rate} dependent $\varepsilon(D,\dot{D})$
+        \item Should also be dose-\emph{rate} dependent $\varepsilon(D,\dot{D})$...
+        \item But when $D$ and $\dot{D}$ very high can use
     \end{itemize}
     \begin{equation*}
-        \varepsilon \approx % what did we use
+        \varepsilon \approx 50\% % what did we use
+    \end{equation*}
+    i.e. upper bound\footnotemark[2]
+
+\footnotetext[2]{K Rothkamm et~al., Cancer Research (2001) 61(10):3886–3893}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Malignant schwannoma}
+    \framesubtitle{Radiation}
+    \begin{center}
+        Why do we care about \emph{TSX} anyway?
+    \end{center}
+
+    \begin{center}
+        \vphantom{Need to know how many indel sites $m_{TSX}$ result in loss of function}
+    \end{center}
+
+    \begin{center}
+        \vphantom{This is predicted by $n_{TSX}$}
+    \end{center}
+
+    \begin{equation*}
+        \vphantom{m_{TSX} \approx 0.42 n_{TSX}}
     \end{equation*}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Cell survival}
-    \framesubtitle{}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
+    \frametitle{Malignant schwannoma}
+    \framesubtitle{Radiation}
+    \begin{center}
+        Why do we care about \emph{TSX} anyway?
+    \end{center}
 
-        \end{column}
-    \end{columns}
-\end{frame}
+    \begin{center}
+        Need to know how many indel sites $m_{TSX}$ result in loss of function:
+    \end{center}
 
-\begin{frame}
-    \frametitle{Why do we care about \emph{TSX} anyway?}
-    Need to know how many indel sites $m_{TSX}$ result in loss of function:
+    \begin{center}
+        This is predicted by $n_{TSX}$:
+    \end{center}
 
-    \begin{equation}
+    \begin{equation*}
         m_{TSX} \approx 0.42 n_{TSX}
-    \end{equation}
+    \end{equation*}
 \end{frame}
 
 \begin{frame}
@@ -967,9 +997,6 @@
     \framesubtitle{Radiation}
     % TODO is this tumour initation or promotion?
 
-    \begin{center}
-        \tiny{Why do we care about \emph{TSX} anyway?}
-    \end{center}
 
     \begin{columns}
         \begin{column}{0.5\textwidth}
@@ -1062,10 +1089,6 @@
 
     \begin{center}
         Lots to do!
-
-        \;
-
-        \huge{I need collaborators, send me data}
     \end{center}
 \end{frame}
 
@@ -1100,7 +1123,7 @@
         \end{column}
         \begin{column}{0.5\textwidth}
         % Manchester NHS FT
-
+        \includegraphics[width=0.75\textwidth]{figures/MFT-logo}
         \end{column}
     \end{columns}
     \begin{columns}

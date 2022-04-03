@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.4.3)  3 APR 2022 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.4.3)  3 APR 2022 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,7 +967,7 @@ e pdfs with page group included in a single page
 <figures/diagram4c.pdf, id=90, 224.04486pt x 228.27417pt>
 File: figures/diagram4c.pdf Graphic file (type pdf)
 <use figures/diagram4c.pdf>
-Package pdftex.def Info: figures/diagram4c.pdf  used on input line 350.
+Package pdftex.def Info: figures/diagram4c.pdf  used on input line 349.
 (pdftex.def)             Requested size: 153.64493pt x 156.55145pt.
  [9
 
@@ -975,7 +975,7 @@ Package pdftex.def Info: figures/diagram4c.pdf  used on input line 350.
 <figures/diagram5.pdf, id=98, 581.36577pt x 232.59811pt>
 File: figures/diagram5.pdf Graphic file (type pdf)
 <use figures/diagram5.pdf>
-Package pdftex.def Info: figures/diagram5.pdf  used on input line 373.
+Package pdftex.def Info: figures/diagram5.pdf  used on input line 372.
 (pdftex.def)             Requested size: 307.28987pt x 122.94633pt.
  [10
 
@@ -983,7 +983,7 @@ Package pdftex.def Info: figures/diagram5.pdf  used on input line 373.
 <figures/cubegraph4-3.pdf, id=106, 867.52101pt x 807.32132pt>
 File: figures/cubegraph4-3.pdf Graphic file (type pdf)
 <use figures/cubegraph4-3.pdf>
-Package pdftex.def Info: figures/cubegraph4-3.pdf  used on input line 382.
+Package pdftex.def Info: figures/cubegraph4-3.pdf  used on input line 381.
 (pdftex.def)             Requested size: 231.37454pt x 215.31812pt.
  [11
 
@@ -991,7 +991,7 @@ Package pdftex.def Info: figures/cubegraph4-3.pdf  used on input line 382.
 <figures/diagram6.pdf, id=114, 929.4725pt x 477.785pt>
 File: figures/diagram6.pdf Graphic file (type pdf)
 <use figures/diagram6.pdf>
-Package pdftex.def Info: figures/diagram6.pdf  used on input line 402.
+Package pdftex.def Info: figures/diagram6.pdf  used on input line 401.
 (pdftex.def)             Requested size: 307.28987pt x 157.95386pt.
  [12
 
@@ -999,7 +999,7 @@ Package pdftex.def Info: figures/diagram6.pdf  used on input line 402.
 <figures/diagram7.pdf, id=122, 519.0929pt x 240.57631pt>
 File: figures/diagram7.pdf Graphic file (type pdf)
 <use figures/diagram7.pdf>
-Package pdftex.def Info: figures/diagram7.pdf  used on input line 422.
+Package pdftex.def Info: figures/diagram7.pdf  used on input line 421.
 (pdftex.def)             Requested size: 307.28987pt x 142.41966pt.
  [13
 
@@ -1007,7 +1007,7 @@ Package pdftex.def Info: figures/diagram7.pdf  used on input line 422.
 <figures/F2.large.jpg, id=131, 308.352pt x 302.0886pt>
 File: figures/F2.large.jpg Graphic file (type jpg)
 <use figures/F2.large.jpg>
-Package pdftex.def Info: figures/F2.large.jpg  used on input line 447.
+Package pdftex.def Info: figures/F2.large.jpg  used on input line 446.
 (pdftex.def)             Requested size: 153.64493pt x 150.52765pt.
 
 [14
@@ -1019,7 +1019,7 @@ Package pdftex.def Info: figures/F2.large.jpg  used on input line 447.
 File: figures/1280px-Sun_(Earth_POV).jpg Graphic file (type jpg)
 <use figures/1280px-Sun_(Earth_POV).jpg>
 Package pdftex.def Info: figures/1280px-Sun_(Earth_POV).jpg  used on input line
- 481.
+ 480.
 (pdftex.def)             Requested size: 364.19536pt x 273.14381pt.
  [16
 
@@ -1027,26 +1027,26 @@ Package pdftex.def Info: figures/1280px-Sun_(Earth_POV).jpg  used on input line
 [17
 
 ]
-contour: Using real outline for `rare and benign' on input line 536.
-contour: Using real outline for ` high quality data' on input line 536.
+contour: Using real outline for `rare and benign' on input line 535.
+contour: Using real outline for ` high quality data' on input line 535.
 <figures/SOLARECLIPSE2021FORDISTROHighRes.jpg, id=154, 462.0462pt x 369.7815pt>
 
 File: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg Graphic file (type jpg)
 <use figures/SOLARECLIPSE2021FORDISTROHighRes.jpg>
 Package pdftex.def Info: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg  used on 
-input line 536.
+input line 535.
 (pdftex.def)             Requested size: 364.19536pt x 291.4753pt.
 [18
 
  <./figures/SOLARECLIPSE2021FORDISTROHighRes.jpg>]
 File: figures/diagram3.pdf Graphic file (type pdf)
 <use figures/diagram3.pdf>
-Package pdftex.def Info: figures/diagram3.pdf  used on input line 572.
+Package pdftex.def Info: figures/diagram3.pdf  used on input line 574.
 (pdftex.def)             Requested size: 152.10931pt x 47.0905pt.
 <figures/DGREvans2005.pdf, id=160, 481.82408pt x 261.32831pt>
 File: figures/DGREvans2005.pdf Graphic file (type pdf)
 <use figures/DGREvans2005.pdf>
-Package pdftex.def Info: figures/DGREvans2005.pdf  used on input line 572.
+Package pdftex.def Info: figures/DGREvans2005.pdf  used on input line 574.
 (pdftex.def)             Requested size: 152.10931pt x 82.49828pt.
  [19
 
@@ -1055,12 +1055,12 @@ Package pdftex.def Info: figures/DGREvans2005.pdf  used on input line 572.
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-616.
+618.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
  [20
 
  <./figures/vsmodel-nochromosomes.pdf>]
-Overfull \hbox (12.21786pt too wide) detected at line 656
+Overfull \hbox (12.21786pt too wide) detected at line 658
 \OT1/cmss/m/it/10.95 P\OT1/cmss/m/n/10.95 ([][]\U/msa/m/n/10.95 ^^C\OT1/cmss/m/
 n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmss/m/it/10.95 N[]\OML/cmm/m/it/10.95 ^
 ^V[]\OT1/cmss/m/it/10.95 r[][]\OML/cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^
@@ -1070,7 +1070,7 @@ n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmss/m/it/10.95 N[]\OML/cmm/m/it/10.95 ^
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-656.
+658.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
 [21
 
@@ -1078,7 +1078,7 @@ Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-705.
+707.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
  [22
 
@@ -1086,7 +1086,7 @@ Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-746.
+748.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
  [23
 
@@ -1094,13 +1094,13 @@ Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line
 File: figures/vsmodel-nochromosomes.pdf Graphic file (type pdf)
 <use figures/vsmodel-nochromosomes.pdf>
 Package pdftex.def Info: figures/vsmodel-nochromosomes.pdf  used on input line 
-761.
+763.
 (pdftex.def)             Requested size: 139.73753pt x 215.31812pt.
 <figures/figure-5-3Hit-feb22.pdf, id=195, 398.90863pt x 323.0136pt>
 File: figures/figure-5-3Hit-feb22.pdf Graphic file (type pdf)
 <use figures/figure-5-3Hit-feb22.pdf>
 Package pdftex.def Info: figures/figure-5-3Hit-feb22.pdf  used on input line 76
-1.
+3.
 (pdftex.def)             Requested size: 153.64493pt x 124.41237pt.
  [24
 
@@ -1109,10 +1109,10 @@ Package pdftex.def Info: figures/figure-5-3Hit-feb22.pdf  used on input line 76
 File: figures/Fig3-combined-bw-feb22.pdf Graphic file (type pdf)
 <use figures/Fig3-combined-bw-feb22.pdf>
 Package pdftex.def Info: figures/Fig3-combined-bw-feb22.pdf  used on input line
- 775.
+ 777.
 (pdftex.def)             Requested size: 235.00494pt x 228.77626pt.
 
-Overfull \vbox (25.2698pt too high) detected at line 775
+Overfull \vbox (25.2698pt too high) detected at line 777
  []
 
 [25
@@ -1122,13 +1122,13 @@ Overfull \vbox (25.2698pt too high) detected at line 775
 File: figures/AKDemetriades_Fig5C.png Graphic file (type png)
 <use figures/AKDemetriades_Fig5C.png>
 Package pdftex.def Info: figures/AKDemetriades_Fig5C.png  used on input line 79
-5.
+7.
 (pdftex.def)             Requested size: 153.64493pt x 145.96005pt.
 <figures/AKDemetriades_Fig4C.png, id=979, 491.8375pt x 585.18625pt>
 File: figures/AKDemetriades_Fig4C.png Graphic file (type png)
 <use figures/AKDemetriades_Fig4C.png>
 Package pdftex.def Info: figures/AKDemetriades_Fig4C.png  used on input line 79
-5.
+7.
 (pdftex.def)             Requested size: 153.64493pt x 182.80774pt.
  [26
 
@@ -1137,12 +1137,12 @@ Package pdftex.def Info: figures/AKDemetriades_Fig4C.png  used on input line 79
 File: figures/malignancy-oncogene.pdf Graphic file (type pdf)
 <use figures/malignancy-oncogene.pdf>
 Package pdftex.def Info: figures/malignancy-oncogene.pdf  used on input line 83
-5.
+7.
 (pdftex.def)             Requested size: 153.64493pt x 45.24232pt.
 <figures/malignancy.pdf, id=986, 231.39554pt x 198.99158pt>
 File: figures/malignancy.pdf Graphic file (type pdf)
 <use figures/malignancy.pdf>
-Package pdftex.def Info: figures/malignancy.pdf  used on input line 835.
+Package pdftex.def Info: figures/malignancy.pdf  used on input line 837.
 (pdftex.def)             Requested size: 153.64493pt x 132.13037pt.
  [27
 
@@ -1154,25 +1154,25 @@ le pdfs with page group included in a single page
 File: figures/malignancy-oncogene.pdf Graphic file (type pdf)
 <use figures/malignancy-oncogene.pdf>
 Package pdftex.def Info: figures/malignancy-oncogene.pdf  used on input line 85
-7.
+9.
 (pdftex.def)             Requested size: 153.64493pt x 45.24232pt.
 <figures/DiameterOncogene-feb21.pdf, id=995, 260.975pt x 250.9375pt>
 File: figures/DiameterOncogene-feb21.pdf Graphic file (type pdf)
 <use figures/DiameterOncogene-feb21.pdf>
 Package pdftex.def Info: figures/DiameterOncogene-feb21.pdf  used on input line
- 857.
+ 859.
 (pdftex.def)             Requested size: 153.64493pt x 147.73785pt.
  [28
 
  <./figures/DiameterOncogene-feb21.pdf>]
 File: figures/malignancy.pdf Graphic file (type pdf)
 <use figures/malignancy.pdf>
-Package pdftex.def Info: figures/malignancy.pdf  used on input line 876.
+Package pdftex.def Info: figures/malignancy.pdf  used on input line 878.
 (pdftex.def)             Requested size: 138.2795pt x 118.91612pt.
 <figures/DiameterTS-oct21.pdf, id=1020, 462.52798pt x 346.89601pt>
 File: figures/DiameterTS-oct21.pdf Graphic file (type pdf)
 <use figures/DiameterTS-oct21.pdf>
-Package pdftex.def Info: figures/DiameterTS-oct21.pdf  used on input line 876.
+Package pdftex.def Info: figures/DiameterTS-oct21.pdf  used on input line 878.
 (pdftex.def)             Requested size: 169.01036pt x 126.75626pt.
  [29
 
@@ -1180,10 +1180,10 @@ Package pdftex.def Info: figures/DiameterTS-oct21.pdf  used on input line 876.
 <figures/TSXhistogram.pdf, id=1059, 152.3596pt x 152.3596pt>
 File: figures/TSXhistogram.pdf Graphic file (type pdf)
 <use figures/TSXhistogram.pdf>
-Package pdftex.def Info: figures/TSXhistogram.pdf  used on input line 900.
+Package pdftex.def Info: figures/TSXhistogram.pdf  used on input line 902.
 (pdftex.def)             Requested size: 153.64493pt x 153.65877pt.
 
-Overfull \vbox (28.09088pt too high) detected at line 900
+Overfull \vbox (28.09088pt too high) detected at line 902
  []
 
 [30
@@ -1200,7 +1200,7 @@ Package pdftex.def Info: figures/radiation-model.pdf  used on input line 924.
 <figures/MObeidat2018.pdf, id=1242, 199.11288pt x 110.73872pt>
 File: figures/MObeidat2018.pdf Graphic file (type pdf)
 <use figures/MObeidat2018.pdf>
-Package pdftex.def Info: figures/MObeidat2018.pdf  used on input line 932.
+Package pdftex.def Info: figures/MObeidat2018.pdf  used on input line 937.
 (pdftex.def)             Requested size: 230.46739pt x 128.17819pt.
  [32
 
@@ -1213,13 +1213,13 @@ Package pdftex.def Info: figures/MObeidat2018.pdf  used on input line 932.
 ]
 File: figures/radiation-model.pdf Graphic file (type pdf)
 <use figures/radiation-model.pdf>
-Package pdftex.def Info: figures/radiation-model.pdf  used on input line 982.
+Package pdftex.def Info: figures/radiation-model.pdf  used on input line 1009.
 (pdftex.def)             Requested size: 153.64493pt x 137.61546pt.
 <figures/SecondHitVariousTS-oct21.pdf, id=1271, 294.80365pt x 316.49911pt>
 File: figures/SecondHitVariousTS-oct21.pdf Graphic file (type pdf)
 <use figures/SecondHitVariousTS-oct21.pdf>
 Package pdftex.def Info: figures/SecondHitVariousTS-oct21.pdf  used on input li
-ne 982.
+ne 1009.
 (pdftex.def)             Requested size: 153.64493pt x 164.95235pt.
  [36
 
@@ -1235,24 +1235,30 @@ ne 982.
 <figures/logo_big.jpg, id=1336, 501.875pt x 226.8475pt>
 File: figures/logo_big.jpg Graphic file (type jpg)
 <use figures/logo_big.jpg>
-Package pdftex.def Info: figures/logo_big.jpg  used on input line 1133.
+Package pdftex.def Info: figures/logo_big.jpg  used on input line 1156.
 (pdftex.def)             Requested size: 153.64493pt x 69.44626pt.
+<figures/MFT-logo.pdf, id=1337, 410.62914pt x 125.72722pt>
+File: figures/MFT-logo.pdf Graphic file (type pdf)
+<use figures/MFT-logo.pdf>
+Package pdftex.def Info: figures/MFT-logo.pdf  used on input line 1156.
+(pdftex.def)             Requested size: 115.23369pt x 35.28203pt.
 
 
 pdfTeX warning: pdflatex (file ./figures/W-Logo_Purple1.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<figures/W-Logo_Purple1.pdf, id=1337, 108.405pt x 72.89233pt>
+<figures/W-Logo_Purple1.pdf, id=1338, 108.405pt x 72.89233pt>
 File: figures/W-Logo_Purple1.pdf Graphic file (type pdf)
 <use figures/W-Logo_Purple1.pdf>
-Package pdftex.def Info: figures/W-Logo_Purple1.pdf  used on input line 1133.
+Package pdftex.def Info: figures/W-Logo_Purple1.pdf  used on input line 1156.
 (pdftex.def)             Requested size: 61.45703pt x 41.32437pt.
 [41
 
- <./figures/logo_big.jpg> <./figures/W-Logo_Purple1.pdf>]
+ <./figures/logo_big.jpg> <./figures/MFT-logo.pdf> <./figures/W-Logo_Purple1.pd
+f>]
 File: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg Graphic file (type jpg)
 <use figures/SOLARECLIPSE2021FORDISTROHighRes.jpg>
 Package pdftex.def Info: figures/SOLARECLIPSE2021FORDISTROHighRes.jpg  used on 
-input line 1155.
+input line 1178.
 (pdftex.def)             Requested size: 364.19536pt x 291.4753pt.
  [42
 
@@ -1266,16 +1272,15 @@ input line 1155.
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-
-(./presentation.aux)
+ (./presentation.aux)
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18704 strings out of 481252
- 357518 string characters out of 5915889
- 652961 words of memory out of 5000000
- 35071 multiletter control sequences out of 15000+600000
+ 18711 strings out of 481252
+ 357689 string characters out of 5915889
+ 653210 words of memory out of 5000000
+ 35077 multiletter control sequences out of 15000+600000
  423137 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  112i,13n,116p,436b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1297,10 +1302,10 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on presentation.pdf (42 pages, 2723628 bytes).
+Output written on presentation.pdf (42 pages, 2730291 bytes).
 PDF statistics:
- 1436 PDF objects out of 1440 (max. 8388607)
- 949 compressed objects within 10 object streams
+ 1439 PDF objects out of 1440 (max. 8388607)
+ 951 compressed objects within 10 object streams
  85 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
