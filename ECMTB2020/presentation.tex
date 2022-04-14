@@ -53,9 +53,63 @@
 % put historic intro first
 % then the network model approach
 
+{
+\DarkMode
 \begin{frame}
-    \frametitle{Warning}
-    \framesubtitle{There will be very few equations in this talk!}
+    \setbeamercolor{item}{fg=white}
+    \setbeamercolor{normal text}{fg=white}
+    \usebeamercolor[fg]{normal text}
+    \frametitle{The big picture}
+    \framesubtitle{The value of mechanistic models}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figures/Orbit2_Wellcome-inv.png}
+        %\begin{center}
+        %\includegraphics[width=0.65\textwidth]{figures/Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg} 
+        %\end{center}
+
+        %$\uparrow$ within $1^\circ$ of predicted location
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item Model with specific mechanism
+            \item Exhausted known factors
+            \item Residuals = new factor
+            \item Model predicted \textbf{size and location} of unknown planet
+        \end{itemize}
+        \end{column}
+    \end{columns}
+\footnotetext[1]{J.P. Nichol, ``The planet Neptune: an exposition and history''
+1849}
+\end{frame}
+}
+
+{
+\DarkMode
+\begin{frame}
+    \setbeamercolor{item}{fg=white}
+    \setbeamercolor{normal text}{fg=white}
+    \usebeamercolor[fg]{normal text}
+    \frametitle{The big picture}
+    \framesubtitle{The value of mechanistic models}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figures/Orbit2_Wellcome-inv.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+        \includegraphics[width=0.65\textwidth]{figures/Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg} 
+        \end{center}
+
+        $\uparrow$ within $1^\circ$ of predicted location
+        \end{column}
+    \end{columns}
+\footnotetext[1]{J.P. Nichol, ``The planet Neptune: an exposition and history''
+1849}
+\end{frame}
+}
+\begin{frame}
+    \frametitle{Some notation}
 
     \begin{columns}
         \begin{column}{0.6\textwidth}
@@ -154,7 +208,7 @@
 
 % CRC model and schwannoma
 \begin{frame}
-    \frametitle{Network models}
+    \frametitle{Mechanistic network models}
     \begin{columns}
         \begin{column}{0.5\textwidth}
         \begin{enumerate}
@@ -181,36 +235,6 @@
     \end{center}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Vestibular schwannoma}
-    \framesubtitle{3-\emph{event} model}
-    % picture of Woods model and a graph
-    % O --> O --> O! 2 stage in NF2, 3 hit (rel. to WT/GP)
-    % include loops for rigour w/correct alpha and beta
-    % very low fitness: s ~ 0.005 /yr
-
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        %\includegraphics[width=0.99\textwidth]{figures/diagramwoods}
-        \includegraphics[width=0.99\textwidth]{figures/diagram3}
-
-        \begin{itemize}
-            \item Fitness suspiciously low, $s \approx 0.005$/yr
-            \item Suggests nearly-neutral 3-hit model
-        \end{itemize}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        % TODO replace with Evans 2005 (our data!) !!!
-        % graph with our model/data
-        % Graph with incidence?
-        \includegraphics[width=0.99\textwidth]{figures/DGREvans2005}
-        \end{column}
-    \end{columns}
-
-\footnotetext[1]{R. Woods \emph{et al.} Genetic Epidemiology (2003)24: 265–272}
-% Evans 2005
-\end{frame}
-
 % DGR Evans 2005
 % 3 hit model
 
@@ -223,6 +247,7 @@
     \begin{columns}
         \begin{column}{0.5\textwidth}
         \begin{itemize}
+            \item 3 events\footnotemark[2]
             \item Include \emph{NF2}, \emph{SMARCB1} and (simplified) linkage
             \item Add hypothetical oncogene \emph{GFX}
         \end{itemize}
@@ -252,6 +277,7 @@
     % Should explain around 80% of incidence well, huge improvement on CRC
     % model
 \footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\footnotetext[2]{DGR. Evans \emph{et al.} Otology \& Neurotology (2005)26:93–97}
 \end{frame}
 
 
@@ -334,11 +360,11 @@
 
 \begin{frame}
     \frametitle{Malignant transformation in vestibular schwannoma}
-    \framesubtitle{Very rare, very bad}
-            \begin{itemize}
-                \item Risk $\approx 0.1\%$ of VS cases
-                \item 5-year survival $\approx 12-20\%$
-            \end{itemize}
+    \begin{itemize}
+        \item Risk $\approx 0.2\%$ of VS cases
+        \item 5-year survival $\approx 20\%$\footnotemark[2]
+    \end{itemize}
+
     \begin{columns}
         \begin{column}{0.5\textwidth}
         \includegraphics[width=\textwidth]{figures/AKDemetriades_Fig5C.png}
@@ -348,73 +374,12 @@
         \includegraphics[width=\textwidth]{figures/AKDemetriades_Fig4C.png}
         \end{column}
     \end{columns}
-\footnotetext{AK Demetriades et~al. Skull Base (2010)20:381–387.}%http://dx.doi.org/10.1055/s-0030-1253576}
+\footnotetext[1]{AK Demetriades et~al. Skull Base (2010)20:381–387.}
+\footnotetext[2]{R Miao et~al. Radiotherapy and Oncology (2019)137:61–70.}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Malignant schwannoma: two models}
-    \framesubtitle{Timing and identity of drivers}
-    % Very rare
-    % Malignant transformation not well understood in general
-
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        % DIAGRAM
-        Oncogene activation: %$\implies$ high risk
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        % OG graph, need to remake TODO
-        \includegraphics[width=\textwidth]{figures/malignancy-oncogene.pdf}
-        \end{column}
-    \end{columns}
-
-    \;
-
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        % DIAGRAM
-        \emph{TSX} inactivation: %$\implies$ low risk
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        % TS graph, from main paper
-        \includegraphics[width=\textwidth]{figures/malignancy.pdf}
-        \end{column}
-    \end{columns}
-    %(Much more likely!)
-
-    %\;
-
-    \begin{center}
-        Malignant VS is \emph{extremely} rare!
-    \end{center}
-
-\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Malignant schwannoma: first model}
-    \framesubtitle{Oncogene activation}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        % DIAGRAM
-        \includegraphics[width=\textwidth]{figures/malignancy-oncogene.pdf}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        % OG graph, TODO NEED TO REMAKE! Ck values of nx!
-        \includegraphics[width=\textwidth]{figures/DiameterOncogene-feb21}
-        \end{column}
-    \end{columns}
-
-\begin{itemize}
-    \item Oncogene activation $\implies$ high risk
-    \item But it's a rare outcome
-    \item So it's probably not caused by oncogene activation
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Malignant schwannoma: second model}
+    \frametitle{Malignant schwannoma}
     \framesubtitle{Tumour suppressor \emph{TSX} inactivation}
     \begin{columns}
         \begin{column}{0.45\textwidth}
@@ -525,21 +490,22 @@
     % include a cute diagram
     \begin{enumerate}
         \item Better estimates of event rates in Schwann cells
-        \item Can constrain timing of ``\emph{TSX}'' (resp. for malignancy)
-        \item Can constrain size of \emph{GFX} and \emph{TSX}
-        \item Radiotherapy probably OK (w. caveats + huge error bars)
+        \item Can constrain \textbf{size} of \emph{GFX} and \emph{TSX} (!)
     \end{enumerate}
+    \begin{center}
+        but...
+    \end{center}
+    \begin{enumerate}
+        \item Identity of \emph{TSX} unknown
+        \item Constraints weak: \emph{GFX} and \emph{TSX} probably multiple genes
+    \end{enumerate}
+
 \end{frame}
 
 %\begin{frame}
 %    \frametitle{Main outputs}
 %    but...
-%    \begin{enumerate}
-%        \item Uncertainties still large
-%        \item Identity of \emph{TSX} unknown
-%        \item Constraints weak: \emph{GFX} and \emph{TSX} probably multiple genes
 %        \item Don't know about NF2
-%    \end{enumerate}
 %\end{frame}
 
 \begin{frame}
@@ -567,7 +533,7 @@
 
         \;
 
-        \huge{I need collaborators, send me data}
+        I need collaborators!
     \end{center}
 \end{frame}
 
