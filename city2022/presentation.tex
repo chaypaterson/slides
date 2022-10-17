@@ -32,15 +32,12 @@
 \setbeamercolor{institute}{fg=white}
 }
 
-\title{Network models of carcinogenesis in colorectal adenocarcinoma and vestibular schwannoma}
+\title{Cancer, copy number alterations, and age:}
+\subtitle{Fast simulations of clonal expansion on networks}
 %\subtitle{A total eclipse of the genome}
 \author{Chay Paterson}
-\institute{University of Manchester*}
-\date{28 March 2022
-
-\;
-
-\tiny{*(sort of)}}
+\institute{University of Manchester}
+\date{18 October 2022}
 % emph. main model output: risk/incidence curve, subtype specific alterations
 
 \begin{document}
@@ -51,226 +48,82 @@
 \frame{\titlepage}
 
 \begin{frame}
-    \frametitle{Warning}
-    \framesubtitle{There will be very few equations in this talk!}
-
-    \begin{columns}
-        \begin{column}{0.6\textwidth}
-        This network...
-        \includegraphics[width=\textwidth]{figures/diagram1}
-        \end{column}
-        \begin{column}{0.4\textwidth}
-        corresponds to this stochastic process:...
-        \begin{align}
-            \emptyset \rightarrow X, &\qquad \mathrm{rate\;}\alpha
-            \nonumber \\
-            % NB
-            X \rightarrow X + Y, &\qquad\mathrm{rate\;}\mu X
-            \nonumber \\
-            Y \rightarrow Y + Y, &\qquad\mathrm{rate\;} \beta Y
-            \nonumber \\
-            Y \rightarrow \emptyset, &\qquad\mathrm{rate\;} \delta Y
-            \nonumber
-        \end{align}
-        \end{column}
-    \end{columns}
-
-    and approximately this linear system...
-
-    \begin{equation*}
-        \frac{d}{dt} 
-        \begin{pmatrix}
-            E[X] \\
-            E[Y] \\
-        \end{pmatrix}
-        = 
-        \begin{bmatrix}
-            0 & 0 \\
-            \mu & \beta - \delta \\
-        \end{bmatrix}
-        \cdot
-        \begin{pmatrix}
-            E[X] \\
-            E[Y] \\
-        \end{pmatrix}
-        +
-        \begin{pmatrix}
-            \alpha \\
-            0 \\
-        \end{pmatrix}
-    \end{equation*}
-
-\begin{center}
-    \small{Most of our models are linear, high-dimensional and sparse\footnotemark}
-\end{center}
-    % Note: example matrix
-\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
-\end{frame}
-
-% history of multi-stage models
-
-% Replace first two slides with:
-% There are many types of cancer
-% with many risk factors, some unique to each (EBV?, irritants, smoking,
-% alcohol)
-% Three are essentially universal: age, genetics, and ionizing radiation.
-% The only known risk factors for brain tumours are age, genetics, and possibly
-% IR. So by learning something about these, we learn something about all
-% neoplasias.
-
-\begin{frame}
-    \frametitle{What is cancer?}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        % figure from Hallmarks? cliche, try something from Wellcome images
-        \includegraphics[width=\textwidth]{figures/HeLaCell_wellcometrust.jpg}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{itemize}
-            \item Various risk factors
-            \item Mutations accumulate
-            \item Loss of control of cell growth \& death
-            \end{itemize}
-            \begin{center}
-            $\downarrow$ gets us a benign tumour/neoplasia...
-            \end{center}
-            \begin{center}
-            $\downarrow$ something happens...
-            \end{center}
-            \begin{itemize}
-            \item Dedifferentiation, migration...
-            \item Malignancy = cancer
-            \end{itemize}
-        \end{column}
-    \end{columns}
-    \;
-    \begin{center}
-    \vphantom{$\sum$}
-    \end{center}
-
-\footnotetext[1]{Figure: HeLa cell https://wellcomecollection.org/works/vpgx8zcd}
-\end{frame}
-
-\begin{frame}
-    \frametitle{What is cancer?}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        % figure from Hallmarks? cliche, try something from Wellcome images
-        \includegraphics[width=\textwidth]{figures/HeLaCell_wellcometrust.jpg}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{itemize}
-            \item Various risk factors
-            \item \underline{Mutations accumulate}
-            \item Loss of control of cell growth \& death
-            \end{itemize}
-            \begin{center}
-            $\downarrow$ gets us a benign tumour/neoplasia...
-            \end{center}
-            \begin{center}
-            $\downarrow$ something happens...
-            \end{center}
-            \begin{itemize}
-            \item Dedifferentiation, migration...
-            \item Malignancy = cancer
-            \end{itemize}
-        \end{column}
-    \end{columns}
-    \;
-    \begin{center}
-    \vphantom{$\sum$}\textbf{Why do we believe this?}
-    \end{center}
-
-\footnotetext[1]{Figure: HeLa cell https://wellcomecollection.org/works/vpgx8zcd}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Multi-stage models}
-    \framesubtitle{P. Armitage and R. Doll\footnotemark}
-
-    % TODO add a k or N_WT to the diagram
+    \frametitle{Age and cancer}
+    \framesubtitle{P. Armitage and R. Doll\footnotemark[12]}
 
     \begin{center}
-        \includegraphics[width=\textwidth]{figures/diagram2b}
+    Risk of cancer increases with age:
     \end{center}
+
     \begin{columns}
         \begin{column}{0.5\textwidth}
         %\includegraphics[width=\textwidth]{figures/diagram2}
-        \begin{center}
-            $\downarrow$
-        \end{center}
-        \begin{equation*}
-            P(\mathrm{cancer}) \approx k p_1 p_2 p_3 p_4 p_5 p_6 p_7 \frac{t^7}{7!}
-        \end{equation*}
-        \begin{equation*}
-            \implies \mathrm{incidence} \propto \frac{t^6}{6!}
-        \end{equation*}
-        \end{column}
-        \begin{column}{0.5\textwidth}
+        % TODO: stock picture here?
         \includegraphics[width=\textwidth]{figures/PArmitageRDoll_1954_6602297.pdf}
-        \end{column}
-    \end{columns}
-
-\footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1954; 8: 1–12}
-\footnotetext[2]{note that $P(t) = 1 - S(t)$, other authors (e.g. Knudson)}
-\end{frame}
-
-
-% TODO slide is unnecessary: slides that are just prompts with no figures are
-% boring
-%\begin{frame}
-%    \frametitle{Multi-stage models}
-%    \framesubtitle{P. Armitage and R. Doll\footnotemark[1]}
-%    \begin{center}
-%    \includegraphics[width=1.00\textwidth]{figures/diagram2b}
-%    \end{center}
-%
-%    \begin{columns}
-%        \begin{column}{0.5\textwidth}
-%        \includegraphics[width=\textwidth]{figures/PArmitageRDoll_1954_6602297.pdf}
-%        \end{column}
-%        \begin{column}{0.5\textwidth}
-%        Problems:
-%        \begin{itemize}
-%            \item Parameter estimates $p_j$ implausibly high
-%            \item No explicit mechanisms
-%            \item Treatment of different orders of
-%            events unclear \footnotemark[1]
-%        \end{itemize}
-%        \end{column}
-%    \end{columns}
-%\footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1954; 8: 1–12}
-%\footnotetext[1]{(See Mathematical Appendix!)}
-%\end{frame}
-
-\begin{frame}
-    \frametitle{Multi-stage models}
-    \framesubtitle{2-3 rate limiting steps\footnotemark[123]}
-    % TODO present both models
-    % ie include Armitage Doll 1957 model, cite Jo Ivasa
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        \begin{center}
-        % multi-stage clonal expansion
-        \includegraphics[width=1.00\textwidth]{figures/diagram3}
-        \end{center}
-
-
-        \begin{itemize}
-            \item Add selection $s_k$
-            \item Better fit, more plausible $\mu_k$
-        \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
         \includegraphics[width=\textwidth]{figures/ArmitageDoll1957_4A.png}
         \end{column}
     \end{columns}
 
+
+\footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1954; 8: 1–12}
+\footnotetext[2]{P. Armitage and R. Doll, British Journal of Cancer 1957; 11(2): 161-169}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Age and cancer}
+    \framesubtitle{P. Armitage and R. Doll\footnotemark[12]}
+
+    \begin{center}
+        Why? Accumulating mutations\footnotemark[123]:
+        \includegraphics[width=0.60\textwidth]{figures/diagram3}
+    \end{center}
+
+\footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1954; 8: 1–12}
+\footnotetext[2]{P. Armitage and R. Doll, British Journal of Cancer 1957; 11(2): 161-169}
+\footnotetext[3]{F. Michor, Y. Iwasa and MA. Nowak, Nature Reviews Cancer 2004; 4: 197-205 doi:10.1038/nrc1295}
+\end{frame}
+
+% PROBLEM: how to compute P(t) for the model?
+
+\begin{frame}
+    \frametitle{Multi-stage clonal expansion models}
+    \framesubtitle{2-3 rate limiting steps\footnotemark[123]}
+    % TODO present both models
+    % ie include Armitage Doll 1957 model, cite Jo Ivasa
+    Problem: how to compute $P(cancer, t)$ for a given model?
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+        % multi-stage clonal expansion
+        \end{center}
+        Different methods:
+        Fast:
+        \begin{itemize}
+            \item Mean-field approximation\footnotemark[1]
+            \item Numerical quadrature\footnotemark[2]
+        \end{itemize}
+        Slow:
+        \begin{itemize}
+            \item Gillespie algorithm + sampling \footnotemark[3]
+            \item tau leaping + sampling \footnotemark[3]
+        \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=1.00\textwidth]{figures/diagram3}
+            $\downarrow?$
+            \includegraphics[width=0.75\textwidth]{figures/ArmitageDoll1957_4A.png}
+        \end{center}
+        \end{column}
+    \end{columns}
+
     % TODO add figure from Armitage Doll 1957 etc.
 \footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1957; 11(2): 161-169}
 \footnotetext[2]{S. Moolgavkar and G. Luebeck, JNCI 1992; 84(8): 610-618}
-\footnotetext[3]{F. Michor, Y. Iwasa and MA. Nowak, Nature Reviews Cancer 2004;
-4: 197-205 doi:10.1038/nrc1295}
+\footnotetext[3]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688 (supp. material)}
 \end{frame}
 
 % TODO replace these three slides w/a discussion of subclonal frequency
@@ -284,12 +137,10 @@
         \begin{column}{0.5\textwidth}
         \begin{enumerate}
             \item Study \textbf{specific genes} and mechanisms of interest
+            (SNVs, LOH, CNA, etc.)
             \item Fix parameters from sequences and experiments
             \item Distinguish different orders of events
         \end{enumerate}
-        \begin{center}
-            \textbf{Predict copy number alterations (etc.)}
-        \end{center}
         \end{column}
         \begin{column}{0.5\textwidth}
         \begin{center}
@@ -304,48 +155,6 @@
     \begin{center}
         This gets us the incidence of \emph{specific karyotypes}
     \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Network models}
-    \framesubtitle{Worked example: tumour suppressor loss-of-function}
-    % TS being lost, show how the three orders of events fold into one graph
-    % emph. that one is forbidden
-    \begin{center}
-    Two events of interest, 3 possible orders:
-    \includegraphics[width=1.0\textwidth]{figures/diagram4b}
-    \end{center}
-    \begin{columns}
-        \begin{column}{0.12\textwidth}
-        \begin{center}
-            \includegraphics[width=0.75\textwidth]{figures/forbidden}
-        \end{center}
-        \end{column}
-        \begin{column}{0.88\textwidth}
-        $\leftarrow$ this order of events is impossible
-
-        (resulting cells are non-viable)
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Network models}
-    \framesubtitle{Worked example: tumour suppressor loss-of-function}
-    % Now we give each mechanism/event a rate
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/diagram4c}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            Assign rates to events:
-        \begin{itemize}
-            \item Get $\mu_{gene}$ from $n_{gene} \times u \times b$
-            \item To get $n_{gene}$, count possible nonsense mutations
-            \item Fix $r_{LOH}$ by looking at relative frequency of LOH
-        \end{itemize}
-        \end{column}
-    \end{columns}
 \end{frame}
 
 
@@ -373,17 +182,6 @@
 
 \begin{frame}
     \frametitle{Colorectal adenocarcinoma model}
-    \framesubtitle{Simplified}
-
-    \begin{center}
-        \includegraphics[height=0.8\textheight]{figures/cubegraph4-3}
-    \end{center}
-\end{frame}
-% maybe one slide dedicated to the actual graph (generate programmatically) in
-% all its 50-dimensional glory
-
-\begin{frame}
-    \frametitle{Colorectal adenocarcinoma model}
     \begin{center}
         \includegraphics[width=1.0\textwidth]{figures/diagram6}
     \end{center}
@@ -396,8 +194,7 @@
 
         \small{e.g. $(-17p, -5q)$, etc}
     \end{center}
-\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34):
-20681-20688 (supp. material)}
+\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688 (supp. material)}
 \end{frame}
 
 \begin{frame}
@@ -432,54 +229,22 @@
         \end{column}
         \begin{column}{0.5\textwidth}
         \begin{itemize}
-            \item Gets proportion of incidence right -- \emph{with no fitting!}
             \item Can constrain \emph{APC/KRAS} epistasis ($s_{2} < 0.31$/yr)
-            \item Timing of \emph{p53} inactivation: must be \emph{late}${}^2$
+            \item Timing of \emph{p53} inactivation: must be \emph{late}
             \item \emph{Compatible with} 3-hit models, similar curve: 
                   \emph{p53 not rate limiting}
-            \item Conditional path probabilities $P(X_i)$ encode fitnesses
+            %\item Conditional path probabilities $P(X_i)$ encode fitnesses
+        \end{itemize}
+        but:
+        \begin{itemize}
+            \item Mean-field breaks down at old ages / large probabilities
+            \item Stochastic simulations are \emph{extremely slow}
         \end{itemize}
         \end{column}
     \end{columns}
 \footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
 \footnotetext[2]{(relative to the others)}
 \end{frame}
-
-\begin{frame}
-    \frametitle{Colorectal adenocarcinoma model}
-    \framesubtitle{Science is very hard}
-    % Some problems with this model
-    % picture of the Sun, glaring
-    \begin{enumerate}
-        \item model only accounts for $15\%$ of lifetime risk${}^{1,2}$
-        \item often malignant on discovery: difficult to constrain
-        timing${}^3$ or effect of drivers 
-        % 175 - 55 = 120
-        \item 5 hits, 50 nodes, 120 edges, 270 paths, strong selection: complicated
-        \item approximations inaccurate when probabilities large
-    \end{enumerate}
-
-
-\footnotetext[1]{M. S. Lawrence et~al., Nature 2014; 505: 495–501}
-\footnotetext[2]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
-\footnotetext[3]{(relative to malignant transformation)}
-% Fearon et al on the route
-\end{frame}
-{
-\setbeamertemplate{background}
-{
-    \includegraphics[width=\paperwidth]{figures/1280px-Sun_(Earth_POV).jpg}
-}
-\begin{frame}
-    \frametitle{}
-    \begin{center}
-        common and malignant = difficult to study
-    \end{center}
-
-\footnotetext[1]{https://commons.wikimedia.org/wiki/File:Sun\_(Earth\_POV).jpg}
-\end{frame}
-}
-
 
 % Why study schwannoma?
 
@@ -498,42 +263,13 @@
         \item only 3 hits, weak selection (almost neutral)
         \item probabilities low: approximations v. accurate \textbf{because it's rare}
     \end{enumerate}
-
-
 % interestingly, TP53 LOF is extremely rare
 
-\footnotetext[1]{ML Carlson et~al., Otology \& Neurotology: 2018;39(9):860 -- 871}
-\footnotetext[2]{AL Håvik et~al., Journal of Neurosurgery JNS. 2017;128(3):911 -- 922.}
-\newblock 
-\newblock 
-
+    \footnotetext[1]{ML Carlson et~al., Otology \& Neurotology: 2018;39(9):860 -- 871}
+    \footnotetext[2]{AL Håvik et~al., Journal of Neurosurgery JNS. 2017;128(3):911 -- 922.}
+    \newblock 
+    \newblock 
 \end{frame}
-
-{
-\DarkMode
-\setbeamertemplate{background}
-{
-    \includegraphics[width=1.0\paperwidth]{figures/SOLARECLIPSE2021FORDISTROHighRes.jpg}
-}
-\begin{frame}
-    \frametitle{}
-
-    \;
-
-    \;
-
-    \;
-
-\begin{center}
-    \contour{black}{rare and benign}
-
-    +
-
-    \contour{black}{ high quality data}
-\end{center}
-\footnotetext[1]{https://apod.nasa.gov/apod/ap211209.html}
-\end{frame}
-}
 
 \begin{frame}
     \frametitle{Vestibular schwannoma}
@@ -658,53 +394,53 @@
 \end{frame}
 
 
-\begin{frame}
-    \frametitle{Vestibular schwannoma incidence}
-    \framesubtitle{Our model for sporadic VS}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        \begin{itemize}
-            \item $\mathrlap{\textcolor{cyan}{\blacksquare}}\Box +
-            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ = have LOH on 22q
-            \item frequency of LOH = $f_{LOH} = (
-            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
-            + 
-            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-            )/(
-            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
-            + 
-            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-            + 
-            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
-            )$
-            \item $\mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ =
-            \emph{SMARCB1}${}^{-/-}$
-            \item frequency of \emph{SMARCB1}${}^{-/-}$ = $f_{SMARCB1}$
-
-            \;
-
-            $= \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-            /(
-            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
-            + 
-            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-            + 
-            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
-            )$
-
-        \end{itemize}
-
-        Can use these to fix parameters!
-        \end{column}
-    \end{columns}
-
-    % interesting: could try fixing fSMARCB1 from looking at tumours WITH
-    % LOH(22q) but WITHOUT additional insults to NF2, and assuming the VAF
-    % detected is uncharacterised pathology? Ask Miriam.
-\end{frame}
+%\begin{frame}
+%    \frametitle{Vestibular schwannoma incidence}
+%    \framesubtitle{Our model for sporadic VS}
+%    \begin{columns}
+%        \begin{column}{0.5\textwidth}
+%            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
+%        \end{column}
+%        \begin{column}{0.5\textwidth}
+%        \begin{itemize}
+%            \item $\mathrlap{\textcolor{cyan}{\blacksquare}}\Box +
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ = have LOH on 22q
+%            \item frequency of LOH = $f_{LOH} = (
+%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            )/(
+%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
+%            )$
+%            \item $\mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ =
+%            \emph{SMARCB1}${}^{-/-}$
+%            \item frequency of \emph{SMARCB1}${}^{-/-}$ = $f_{SMARCB1}$
+%
+%            \;
+%
+%            $= \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            /(
+%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
+%            )$
+%
+%        \end{itemize}
+%
+%        Can use these to fix parameters!
+%        \end{column}
+%    \end{columns}
+%
+%    % interesting: could try fixing fSMARCB1 from looking at tumours WITH
+%    % LOH(22q) but WITHOUT additional insults to NF2, and assuming the VAF
+%    % detected is uncharacterised pathology? Ask Miriam.
+%\end{frame}
 
 \begin{frame}
     \frametitle{Vestibular schwannoma incidence}
@@ -901,129 +637,6 @@
 \footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Malignant schwannoma}
-    \framesubtitle{Radiation}
-    % TODO is this tumour initation or promotion?
-
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/radiation-model}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        3 dose-dependent effects:
-        \begin{itemize}
-            \item DSB induction $p_{DSB}(D)$
-            \item DSB misrepair $\varepsilon(D)$
-            \item cell survival $S(D)$
-        \end{itemize}
-
-        + $m_{TSX}$ num. sensitive sites on \emph{TSX}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-% DSB induction: 
-\begin{frame}
-    \frametitle{DSB induction model}
-    \framesubtitle{Prob. DSB on a single b.p.}
-    \begin{center}
-        \includegraphics[width=0.75\textwidth]{figures/MObeidat2018}
-    \end{center}
-    \begin{equation*}
-        p_{DSB} \approx k D, \quad k = 3.9\times 10^{-7} \mathrm{/Gy /bp}
-    \end{equation*}
-\footnotetext[1]{M. Obeidat et~al., Med. Phys. 45 (7), July 2018}
-\end{frame}
-
-\begin{frame}
-    \frametitle{DSB misrepair}
-
-    \begin{itemize}
-        \item Should be dose dependent $\varepsilon(D)$...
-        \item Should also be dose-\emph{rate} dependent $\varepsilon(D,\dot{D})$...
-        \item But when $D$ and $\dot{D}$ very high can use
-    \end{itemize}
-    \begin{equation*}
-        \varepsilon \approx 50\% % what did we use
-    \end{equation*}
-    i.e. upper bound\footnotemark[2]
-
-\footnotetext[2]{K Rothkamm et~al., Cancer Research (2001) 61(10):3886–3893}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Malignant schwannoma}
-    \framesubtitle{Radiation}
-    \begin{center}
-        Why do we care about \emph{TSX} anyway?
-    \end{center}
-
-    \begin{center}
-        \vphantom{Need to know how many indel sites $m_{TSX}$ result in loss of function}
-    \end{center}
-
-    \begin{center}
-        \vphantom{This is predicted by $n_{TSX}$}
-    \end{center}
-
-    \begin{equation*}
-        \vphantom{m_{TSX} \approx 0.42 n_{TSX}}
-    \end{equation*}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Malignant schwannoma}
-    \framesubtitle{Radiation}
-    \begin{center}
-        Why do we care about \emph{TSX} anyway?
-    \end{center}
-
-    \begin{center}
-        Need to know how many indel sites $m_{TSX}$ result in loss of function:
-    \end{center}
-
-    \begin{center}
-        This is predicted by $n_{TSX}$:
-    \end{center}
-
-    \begin{equation*}
-        m_{TSX} \approx 0.42 n_{TSX}
-    \end{equation*}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Malignant schwannoma}
-    \framesubtitle{Radiation}
-    % TODO is this tumour initation or promotion?
-
-
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/radiation-model}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/SecondHitVariousTS-oct21}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Malignant schwannoma}
-    \framesubtitle{Radiation}
-    Uncontroversial conclusions, but...
-
-    \begin{itemize}
-        \item Model is missing mechanisms (what is $\varepsilon$? multiple genes?)
-        \item Multifocality and familial NF2?
-        \item Margin clearance \& recurrence?
-    \end{itemize}
-        \begin{center}
-            \emph{What experiments could constrain these?}
-        \end{center}
-\end{frame}
-
 % TODO skip if preprint not ready
 % TODO preprint is definitely not going to be ready
 %\begin{frame}
@@ -1052,7 +665,6 @@
         \item Better estimates of event rates in Schwann cells
         \item Can constrain timing of ``\emph{TSX}'' (resp. for malignancy)
         \item Can constrain size of \emph{GFX} and \emph{TSX}
-        \item Radiotherapy probably OK (w. caveats + huge error bars)
     \end{enumerate}
 \end{frame}
 
@@ -1063,33 +675,84 @@
         \item Uncertainties still large
         \item Identity of \emph{TSX} unknown
         \item Constraints weak: \emph{GFX} and \emph{TSX} probably multiple genes
-        \item Don't know about NF2
     \end{enumerate}
 \end{frame}
 
 \begin{frame}
+    \frametitle{Multiple genes}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Recent progress: new algorithm!}
+
+    Laplace transform turns master equation in $\vec{N}$ into a wave equation in
+    $\vec{q}$:
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        % TS loss diagram here
+        \begin{equation*}
+            \frac{d P(t,\vec{N})}{dt} = \sum_{j,k} \mu_{jk} N_j
+            P(t,\vec{N}') + \cdots
+        \end{equation*}
+        \begin{center}
+            $\downarrow$
+        \end{center}
+        \begin{equation*}
+            \frac{\partial \Psi}{\partial t} = \vec{X}\cdot \nabla \Psi
+        \end{equation*}
+
+        Much easier to solve: just numerical integration
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figures/flowcube1}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{New algorithm}
+
+    Compare to sampling... Stochastic algorithms take
+    
+    \begin{equation}
+        N \sim \mathcal{O}(\epsilon^{-2})
+    \end{equation}
+    runs, and runtime $T \propto N$.
+
+    \;
+
+    New algorithm runs in
+    \begin{equation}
+       T \sim \mathcal{O}(\epsilon^{-1/3})
+    \end{equation}
+
+    so new runtime $\sim \mathcal{O}\left(\right.$ old runtime
+    $\left.^{1/6}\right)$.
+
+\end{frame}
+
+
+
+\begin{frame}
     \frametitle{To do list}
 
-    Next gen sequencing...
+    Experiments:
     \begin{itemize}
         \item Sporadic VS to constrain $f_{SMARCB1}$: $n > 300$
-        \item CNA/NGS in MPNST (\textbf{rare!}): $n > 30$
+        \item Empirical CNA/NGS in MPNST (\textbf{rare!})?: $n > 30$
         %\item Study to look at RR in 22q11.2DS: $n > 10000$
         % Not going to be ready
     \end{itemize}
-
-    but also...
+    Theory:
     \begin{itemize}
-        \item Better models!!! CNA/VAF models, machine learning, optimal clustering, $\mu_{C>T}$ etc.
-        \item SEER data too?
-        \item Multiple genes \emph{GFX} and \emph{TSX}? 
-        \item Haploinsufficiency, selection?
+        \item Convert $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
+        using \emph{integer partitions}
+        \item Implement new efficient algorithm in parameter inference with max.
+        likelihood 
     \end{itemize}
-    % more complicated graph
-
-    \begin{center}
-        Lots to do!
-    \end{center}
 \end{frame}
 
 %\begin{frame}
@@ -1115,8 +778,7 @@
 % Acknowledgements
 
 \begin{frame}
-    \frametitle{Acknowledgements + collaborators}
-    \framesubtitle{for their \emph{in kind} support}
+    \frametitle{Acknowledgements}
     \begin{columns}
         \begin{column}{0.5\textwidth}
         \includegraphics[width=\textwidth]{figures/logo_big.jpg}
@@ -1143,6 +805,7 @@
             \item Gareth Evans
             \item Xanthe Hoad
             \item Miriam Smith
+            \item David Wedge
         \end{itemize}
 
         \end{column}
@@ -1150,36 +813,6 @@
     % UoM
     % UW
     % NHS
-    % InSync (maybe)
-
-    % Budget: £0
 \end{frame}
-
-{
-\DarkMode
-\setbeamertemplate{background}
-{
-    \includegraphics[width=1.0\paperwidth]{figures/SOLARECLIPSE2021FORDISTROHighRes.jpg}
-}
-\begin{frame}
-    \frametitle{}
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \begin{center}
-        Thank you for listening!
-    \end{center}
-\end{frame}
-}
-% I don't *need* a job
-% Mostly want new collaborations especially with experimental components
-% Would be nice to spend more time doing research
-% Ideal: externally funded position
 
 \end{document} 
