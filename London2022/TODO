@@ -1,0 +1,11 @@
+Cancer Research UK Brain Tumour Conference
+5-7 September 2022
+
+Abstract:
+
+Vestibular schwannoma is a benign tumour of the eighth cranial nerve, very rarely becoming malignant. The only known risk factors are genetics and age, with current evidence pointing to three initiating events, two of which usually involve loss-of-function of NF2. By developing mathematical models in close collaboration with clinical geneticists, we can infer that initiation of the benign tumours probably involves a gain-of-function mutation. Malignant progression is more likely to be caused by a loss-of-function mutation than a gain-of-function mutation, consistent with its rarity. By training the model on a combination of epidemiological, genomic, and clinical data, we can constrain the size and location of this unknown gene, TSX [1]. When treated with radiotherapy, VS may become malignant instead of being successfully treated. After extending the model to describe radiogenic mutations, we conclude that radiotherapy is probably safe for sporadic tumours, but the model has not yet been extended to familial NF2 cases.
+
+References
+
+[1] C Paterson, MJ Smith, I Bozic, X Hoad, DGR Evans, “A mechanistic mathematical model of initiation
+and malignant transformation in sporadic vestibular schwannoma”, Under review, 2022.
