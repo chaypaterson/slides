@@ -100,6 +100,63 @@
 }
 
 \begin{frame}
+    \frametitle{Warning}
+    \framesubtitle{There will be very few equations in this talk!}
+
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+        This network...
+        \includegraphics[width=\textwidth]{figures/diagram1}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+        corresponds to this stochastic process:...
+        \begin{align}
+            \emptyset \rightarrow X, &\qquad \mathrm{rate\;}\alpha
+            \nonumber \\
+            % NB
+            X \rightarrow X + Y, &\qquad\mathrm{rate\;}\mu X
+            \nonumber \\
+            Y \rightarrow Y + Y, &\qquad\mathrm{rate\;} \beta Y
+            \nonumber \\
+            Y \rightarrow \emptyset, &\qquad\mathrm{rate\;} \delta Y
+            \nonumber
+        \end{align}
+        \end{column}
+    \end{columns}
+
+    and approximately this linear system...
+
+    \begin{equation*}
+        \frac{d}{dt} 
+        \begin{pmatrix}
+            E[X] \\
+            E[Y] \\
+        \end{pmatrix}
+        = 
+        \begin{bmatrix}
+            0 & 0 \\
+            \mu & \beta - \delta \\
+        \end{bmatrix}
+        \cdot
+        \begin{pmatrix}
+            E[X] \\
+            E[Y] \\
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+            \alpha \\
+            0 \\
+        \end{pmatrix}
+    \end{equation*}
+
+\begin{center}
+    \small{Most of our models are linear, high-dimensional and sparse\footnotemark}
+\end{center}
+    % Note: example matrix
+\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
+\end{frame}
+
+\begin{frame}
     \frametitle{Age and cancer}
     \framesubtitle{P. Armitage and R. Doll\footnotemark[12]}
 
@@ -783,10 +840,13 @@
 
     so new runtime $\sim \mathcal{O}\left(\right.$ old runtime
     $\left.^{1/6}\right)$.
-
 \end{frame}
 
+\begin{frame}
+    \frametitle{New algorithm}
 
+    \includegraphics[width=\textwidth]{figures/Figure_1.png}
+\end{frame}
 
 \begin{frame}
     \frametitle{To do list}
