@@ -1,0 +1,629 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[outline]{contour}
+
+\mode<presentation>
+{
+  \useoutertheme{default}
+}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{frametitle}[default][center]
+%\setbeamercolor{frametitle}{fg=white}
+%\setbeamercolor{background canvas}{bg=black}
+%\setbeamercolor{normal text}{fg=white}
+%\usepackage[dvipsnames]{xcolor}
+\definecolor{cyan}{rgb}{0,1,1}
+\definecolor{yellow}{rgb}{1,1,0}
+\definecolor{magenta}{rgb}{1,0,1}
+
+\newcommand\DarkMode{
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{normal text}{fg=white}
+\usebeamercolor[fg]{normal text}
+\setbeamercolor{item}{fg=white}
+\setbeamercolor{alerted text}{fg=white}
+\setbeamercolor{structure}{fg=white}
+\setbeamercolor{enumerate item}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{institute}{fg=white}
+}
+
+\title{Mechanistic networks for cancer genomics}
+\subtitle{Cancer, copy number alterations, and age}
+%\subtitle{A total eclipse of the genome}
+\author{Chay Paterson}
+\institute{University of Manchester}
+\date{18 October 2022}
+% emph. main model output: risk/incidence curve, subtype specific alterations
+
+\begin{document}
+
+% TODO: two graphs missing, general 3/stage multi stage
+%       and evans 2005 multi-stage
+
+\frame{\titlepage}
+
+
+\begin{frame}
+    \frametitle{Warning}
+    \framesubtitle{There will be very few equations in this talk!}
+
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+        This network...
+        \includegraphics[width=\textwidth]{figures/diagram1}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+        corresponds to this stochastic process:...
+        \begin{align}
+            \emptyset \rightarrow X, &\qquad \mathrm{rate\;}\alpha
+            \nonumber \\
+            % NB
+            X \rightarrow X + Y, &\qquad\mathrm{rate\;}\mu X
+            \nonumber \\
+            Y \rightarrow Y + Y, &\qquad\mathrm{rate\;} \beta Y
+            \nonumber \\
+            Y \rightarrow \emptyset, &\qquad\mathrm{rate\;} \delta Y
+            \nonumber
+        \end{align}
+        \end{column}
+    \end{columns}
+
+    and approximately this linear system...
+
+    \begin{equation*}
+        \frac{d}{dt} 
+        \begin{pmatrix}
+            E[X] \\
+            E[Y] \\
+        \end{pmatrix}
+        = 
+        \begin{bmatrix}
+            0 & 0 \\
+            \mu & \beta - \delta \\
+        \end{bmatrix}
+        \cdot
+        \begin{pmatrix}
+            E[X] \\
+            E[Y] \\
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+            \alpha \\
+            0 \\
+        \end{pmatrix}
+    \end{equation*}
+
+\begin{center}
+    \small{Most of our models are linear, high-dimensional and sparse\footnotemark}
+\end{center}
+    % Note: example matrix
+\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Age and cancer}
+    \framesubtitle{P. Armitage and R. Doll\footnotemark[12]}
+
+    \begin{center}
+    Risk of cancer increases with age:
+    \end{center}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        %\includegraphics[width=\textwidth]{figures/diagram2}
+        % TODO: stock picture here?
+        \includegraphics[width=\textwidth]{figures/PArmitageRDoll_1954_6602297.pdf}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figures/ArmitageDoll1957_4A.png}
+        \end{column}
+    \end{columns}
+
+
+\footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1954; 8: 1–12}
+\footnotetext[2]{P. Armitage and R. Doll, British Journal of Cancer 1957; 11(2): 161-169}
+\end{frame}
+
+% PROBLEM: how to compute P(t) for the model?
+
+\begin{frame}
+    \frametitle{Multi-stage clonal expansion models}
+    \framesubtitle{2-3 rate limiting steps\footnotemark[123]}
+    % TODO present both models
+    % ie include Armitage Doll 1957 model, cite Jo Ivasa
+    Problem: how to compute $P(cancer, t)$ for a given model?
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+        % multi-stage clonal expansion
+        \end{center}
+        Different methods:
+        Fast:
+        \begin{itemize}
+            \item Mean-field approximation\footnotemark[1]
+            \item Numerical quadrature\footnotemark[2]
+        \end{itemize}
+        Slow:
+        \begin{itemize}
+            \item Gillespie algorithm + sampling \footnotemark[3]
+            \item tau leaping + sampling \footnotemark[3]
+        \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=1.00\textwidth]{figures/diagram3}
+            $\downarrow?$
+            \includegraphics[width=0.75\textwidth]{figures/ArmitageDoll1957_4A.png}
+        \end{center}
+        \end{column}
+    \end{columns}
+
+    % TODO add figure from Armitage Doll 1957 etc.
+\footnotetext[1]{P. Armitage and R. Doll, British Journal of Cancer 1957; 11(2): 161-169}
+\footnotetext[2]{S. Moolgavkar and G. Luebeck, JNCI 1992; 84(8): 610-618}
+\footnotetext[3]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688 (supp. material)}
+\end{frame}
+
+% TODO replace these three slides w/a discussion of subclonal frequency
+% distributions and drivers for the version at UCL:
+%\include{extended.tex}
+
+% CRC model and schwannoma
+\begin{frame}
+    \frametitle{Network models}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{enumerate}
+            \item Study \textbf{specific genes} and mechanisms of interest
+            (SNVs, LOH, CNA, etc.)
+            \item Fix parameters from sequences and experiments
+            \item Distinguish different orders of events
+        \end{enumerate}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+            \small{example model}
+        \end{center}
+            \includegraphics[width=\textwidth]{figures/diagram4}
+        \end{column}
+    \end{columns}
+
+    \;
+
+    \begin{center}
+        This gets us the incidence of \emph{specific karyotypes}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Colorectal adenocarcinoma model}
+    % two TSes lost one oncogene gained
+    % product of three graphs: each gene has independent dynamics
+    % successfully bound epistasis!
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{figures/diagram5}
+    \end{center}
+
+    \begin{center}
+    \begin{itemize}
+        \item \emph{APC-p53-kRAS} combo accounts for about $15\%$ of incidence
+        \item 5-year survival about $60\%$ (any stage)
+    \end{itemize}
+    \end{center}
+
+\footnotetext[1]{Fearon et~al. TODO}
+\footnotetext[1]{M. S. Lawrence et~al., Nature 2014; 505: 495–501}
+\footnotetext[2]{Office for National Statistics, England 2019}
+% Fearon et al on the route
+\end{frame}
+
+\begin{frame}
+    \frametitle{Colorectal adenocarcinoma model}
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{figures/diagram6}
+    \end{center}
+
+
+    \begin{center}
+        \small{each end node is a different copy number profile}
+
+        \;
+
+        \small{e.g. $(-17p, -5q)$, etc}
+    \end{center}
+\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688 (supp. material)}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Colorectal adenocarcinoma model}
+
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{figures/diagram7}
+    \end{center}
+
+    \begin{equation*}
+        P(t) \sim t e^{s_2 t}
+    \end{equation*}
+    \begin{center}
+    \begin{itemize}
+        \item The $4$ most likely paths account for $50\%$ of the risk
+        \item Consistent with classic model\footnotemark[2]
+    \end{itemize}
+    \end{center}
+\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
+\footnotetext[2]{Kinzler and Vogelstein 1990}
+\end{frame}
+% The solution method is more interesting than the actual solution, but can show
+% some very important (most likely!) paths and the corresponding curve
+
+\begin{frame}
+    \frametitle{Colorectal adenocarcinoma model}
+    \framesubtitle{Successful \emph{ab initio} model}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        % graph from our PNAS paper
+        \includegraphics[width=\textwidth]{figures/F2.large.jpg}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item Can constrain \emph{APC/KRAS} epistasis ($s_{2} < 0.31$/yr)
+            \item Timing of \emph{p53} inactivation: must be \emph{late}
+            \item \emph{Compatible with} 3-hit models, similar curve: 
+                  \emph{p53 not rate limiting}
+            %\item Conditional path probabilities $P(X_i)$ encode fitnesses
+        \end{itemize}
+        but:
+        \begin{itemize}
+            \item Mean-field breaks down at old ages / large probabilities
+            \item Stochastic simulations are \emph{extremely slow}
+        \end{itemize}
+        \end{column}
+    \end{columns}
+\footnotetext[1]{C. Paterson, I. Bozic, H. Clevers, PNAS 2020; 117(34): 20681-20688}
+\footnotetext[2]{(relative to the others)}
+\end{frame}
+
+% Why study schwannoma?
+
+\begin{frame}
+    \frametitle{Why study vestibular schwannoma?}
+    \framesubtitle{Sometimes rare events make more interesting science possible}
+    % Sometimes RARE EVENTS make more interesting science possible
+    % Solar eclipse picture
+
+    \begin{enumerate}
+        \item genomic subtypes better characterised: \emph{NF2/Merlin}
+        altered in $85-100\%$ of cases${}^{1,2}$, \emph{TP53} in
+        $\approx 0\%$
+        \item usually benign = \textbf{easier to study timing!} (of drivers,
+        malignant transformation...)
+        \item only 3 hits, weak selection (almost neutral)
+        \item probabilities low: approximations v. accurate \textbf{because it's rare}
+    \end{enumerate}
+% interestingly, TP53 LOF is extremely rare
+
+    \footnotetext[1]{ML Carlson et~al., Otology \& Neurotology: 2018;39(9):860 -- 871}
+    \footnotetext[2]{AL Håvik et~al., Journal of Neurosurgery JNS. 2017;128(3):911 -- 922.}
+    \newblock 
+    \newblock 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vestibular schwannoma}
+    \framesubtitle{3-\emph{event} model}
+    % picture of Woods model and a graph
+    % O --> O --> O! 2 stage in NF2, 3 hit (rel. to WT/GP)
+    % include loops for rigour w/correct alpha and beta
+    % very low fitness: s ~ 0.005 /yr
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        %\includegraphics[width=0.99\textwidth]{figures/diagramwoods}
+        \includegraphics[width=0.99\textwidth]{figures/diagram3}
+
+        \begin{itemize}
+            \item Fitness suspiciously low, $s \approx 0.005$/yr
+            \footnotemark[1]
+            \item Suggests nearly-neutral 3-hit model
+            \footnotemark[3]
+        \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        % TODO replace with Evans 2005 (our data!) !!!
+        % graph with our model/data
+        % Graph with incidence?
+        \includegraphics[width=0.99\textwidth]{figures/DGREvans2005}
+        \begin{center}
+            \small{Gareth Evans 2005\footnotemark[2]}
+        \end{center}
+        \end{column}
+    \end{columns}
+
+\footnotetext[1]{R. Woods \emph{et al.} Genetic Epidemiology (2003)24: 265–272}
+\footnotetext[2]{DGR. Evans \emph{et al.} Otology \& Neurotology (2005)26:93–97}
+\footnotetext[3]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans,
+ https://doi.org/10.1101/2021.10.03.457528}}
+% Evans 2005
+\end{frame}
+
+% DGR Evans 2005
+% 3 hit model
+
+\begin{frame}
+    \frametitle{Vestibular schwannoma incidence}
+    \framesubtitle{Our model for sporadic VS}
+    % 3 hit model following Woods
+    % Include LINKAGE of SMARCB1 and NF2
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item Include \emph{NF2}, \emph{SMARCB1} and (simplified) linkage
+            \item Add hypothetical oncogene \emph{GFX}
+        \end{itemize}
+
+        \;
+        % Diagram of our model
+        % Point out TS loss structure of NF2
+        % Graph of actual incidence on left
+
+        Risk of each subtype looks like
+
+    \begin{equation*}
+        P(\mathrlap{\textcolor{cyan}{\blacksquare}}\Box) \propto \frac{t^3}{3!}
+    \end{equation*}
+    \begin{equation*}
+        P(\mathrlap{\textcolor{cyan}{\blacksquare}}\Box) \approx N_{WT} \mu_{GFX}
+        r_{LOH} \frac{1}{2} \mu_{NF2} \frac{t^3}{3!}  \times 6
+    \end{equation*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
+        \end{center}
+        \end{column}
+    \end{columns}
+    
+    % Should explain around 80% of incidence well, huge improvement on CRC
+    % model
+\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\end{frame}
+
+
+%\begin{frame}
+%    \frametitle{Vestibular schwannoma incidence}
+%    \framesubtitle{Our model for sporadic VS}
+%    \begin{columns}
+%        \begin{column}{0.5\textwidth}
+%            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
+%        \end{column}
+%        \begin{column}{0.5\textwidth}
+%        \begin{itemize}
+%            \item $\mathrlap{\textcolor{cyan}{\blacksquare}}\Box +
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ = have LOH on 22q
+%            \item frequency of LOH = $f_{LOH} = (
+%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            )/(
+%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
+%            )$
+%            \item $\mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ =
+%            \emph{SMARCB1}${}^{-/-}$
+%            \item frequency of \emph{SMARCB1}${}^{-/-}$ = $f_{SMARCB1}$
+%
+%            \;
+%
+%            $= \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            /(
+%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+%            + 
+%            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
+%            )$
+%
+%        \end{itemize}
+%
+%        Can use these to fix parameters!
+%        \end{column}
+%    \end{columns}
+%
+%    % interesting: could try fixing fSMARCB1 from looking at tumours WITH
+%    % LOH(22q) but WITHOUT additional insults to NF2, and assuming the VAF
+%    % detected is uncharacterised pathology? Ask Miriam.
+%\end{frame}
+
+\begin{frame}
+    \frametitle{Vestibular schwannoma incidence}
+    \framesubtitle{Our model for sporadic VS}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item \emph{Don't} use \emph{ab initio} point estimates for $u$, $r_{LOH}$, $n_{GFX}$ this time...
+            \item Instead use $P(t) = \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box$, $f_{LOH} =
+            \frac{
+            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+            }{
+            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
+            }$, and
+            $f_{SMARCB1}= 
+            \frac{
+            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+            }{
+            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
+            + 
+            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
+            }$ to fix the parameters!
+        \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Vestibular schwannoma incidence}
+    \framesubtitle{Our model for sporadic VS}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=1.0\textwidth]{figures/figure-5-3Hit-feb22}
+        \end{column}
+    \end{columns}
+\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vestibular schwannoma incidence}
+    \framesubtitle{New parameter estimates}
+    % Figures from paper? i.e. bootstrapped distributions
+
+    \begin{center}
+    \includegraphics[height=0.85\textheight]{figures/Fig3-combined-bw-feb22}
+
+    \;
+
+        \tiny{bootstrapped distributions}
+    \end{center}
+\end{frame}
+
+
+% TODO skip if preprint not ready
+% TODO preprint is definitely not going to be ready
+%\begin{frame}
+%    \frametitle{DiGeorge syndrome}
+%    \framesubtitle{Ongoing work}
+%    % copy and paste figures from paper
+%    \begin{columns}
+%        \begin{column}{0.5\textwidth}
+%        % TS loss diagram here
+%        \end{column}
+%        \begin{column}{0.5\textwidth}
+%        % TS loss diagram with forbidden orders
+%        % 2 hit diagram
+%        \end{column}
+%    \end{columns}
+%
+%    \begin{center}
+%        Can (maybe) predict relative risk of schwannoma in rare syndrome
+%    \end{center}
+%\end{frame}
+
+\begin{frame}
+    \frametitle{Main outputs}
+    % include a cute diagram
+    \begin{enumerate}
+        \item Better estimates of event rates in Schwann cells
+        \item Can constrain timing of ``\emph{TSX}'' (resp. for malignancy)
+        \item Can constrain size of \emph{GFX} and \emph{TSX}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{To do list}
+
+    Experiments:
+    \begin{itemize}
+        \item Sporadic VS to constrain $f_{SMARCB1}$: $n > 300$
+        \item Empirical CNA/NGS in MPNST (\textbf{rare!})?: $n > 30$
+        %\item Study to look at RR in 22q11.2DS: $n > 10000$
+        % Not going to be ready
+    \end{itemize}
+    Theory:
+    \begin{itemize}
+        \item Convert $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
+        using \emph{integer partitions}
+        \item Implement new efficient algorithm in parameter inference with max.
+        likelihood 
+    \end{itemize}
+\end{frame}
+
+%\begin{frame}
+%    \frametitle{The big picture}
+%    \framesubtitle{Why study malignant transformation in VS at all}
+%    \begin{center}
+%        Hi-res look at malignant transformation \emph{in slow motion}, usually
+%        impossible!
+%    \end{center}
+%
+%    \begin{center}
+%        What genes are responsible? Fundamentally interesting!
+%    \end{center}
+%    % solar eclipses are rare but resulted in
+%    % discovery of helium
+%    % discovery of general relativity
+%
+%% 1868 and 1919
+%\end{frame}
+
+%\include{neptune.tex}
+
+% Acknowledgements
+
+\begin{frame}
+    \frametitle{Acknowledgements}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{figures/logo_big.jpg}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        % Manchester NHS FT
+        \includegraphics[width=0.75\textwidth]{figures/MFT-logo}
+        \end{column}
+    \end{columns}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{center}
+        \includegraphics[width=0.4\textwidth]{figures/W-Logo_Purple1}
+        \end{center}
+
+        The University of Washington
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        In order of appearance...
+
+        \begin{itemize}
+            \item Ivana Bo\v{z}i\'{c}
+            \item Hans Clevers
+            \item Gareth Evans
+            \item Xanthe Hoad
+            \item Miriam Smith
+            \item David Wedge
+        \end{itemize}
+
+        \end{column}
+    \end{columns}
+    % UoM
+    % UW
+    % NHS
+\end{frame}
+
+\end{document} 

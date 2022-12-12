@@ -1,0 +1,30 @@
+Target: 20-25 slides
+
+Removable: slides on radiation, warning slide, definition of cancer
+
+Intro: Armitage-Doll: age-incidence data
+
+Main PROBLEM: want to predict prob. of cancer by age t.
+    Three SOLUTIONS:
+        Gillespie algorithm (v. slow but exact)
+        Luebeck-Moolgavkar quadrature (v. fast but doesn't work on graphs)
+        Mean field approximation (v. fast but inaccurate)
+
+Could add/mention: integer partitions
+
+Change: nOGX --> nGFX
+
+Add: description of new algorithm!
+    How much faster it is
+    To the same accuracy, new runtime ~ old runtime ^{1/6}
+
+Add: demonstrate with a graph of computed incidence
+
+
+Thu 10 Nov 16:18:05 GMT 2022
+
+"Mean field" --> "mass action"
+
+Mention Chris and Bingxin's work
+
+Change dt^3 to dt^p
