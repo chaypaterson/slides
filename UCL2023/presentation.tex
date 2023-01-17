@@ -32,12 +32,10 @@
 \setbeamercolor{institute}{fg=white}
 }
 
-\title{Fast simulations of clonal expansion on networks}
-\subtitle{Cancer, copy number alterations, and age}
-%\subtitle{A total eclipse of the genome}
+\title{Evolution on graphs and the transition to cancer}
 \author{Chay Paterson}
 \institute{University of Manchester}
-\date{18 October 2022}
+\date{18 January 2023}
 % emph. main model output: risk/incidence curve, subtype specific alterations
 
 \begin{document}
@@ -46,59 +44,6 @@
 %       and evans 2005 multi-stage
 
 \frame{\titlepage}
-
-{
-\DarkMode
-\begin{frame}
-    \setbeamercolor{item}{fg=white}
-    \setbeamercolor{normal text}{fg=white}
-    \usebeamercolor[fg]{normal text}
-    \frametitle{Introduction}
-    \begin{center}
-    %\includegraphics[width=0.35\textwidth]{figures/Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg} 
-    \end{center}
-\end{frame}
-}
-
-{
-\DarkMode
-\begin{frame}
-    \setbeamercolor{item}{fg=white}
-    \setbeamercolor{normal text}{fg=white}
-    \usebeamercolor[fg]{normal text}
-    \frametitle{Introduction}
-    \begin{center}
-    \includegraphics[width=0.35\textwidth]{figures/Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg} 
-    \end{center}
-\end{frame}
-}
-
-{
-\DarkMode
-\begin{frame}
-    \setbeamercolor{item}{fg=white}
-    \setbeamercolor{normal text}{fg=white}
-    \usebeamercolor[fg]{normal text}
-    \frametitle{The value of good models}
-    \framesubtitle{The big picture}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        Mechanistic model $\downarrow$
-        \includegraphics[width=\textwidth]{figures/Orbit2_Wellcome-inv.png}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        \begin{center}
-        \includegraphics[width=0.65\textwidth]{figures/Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg} 
-        \end{center}
-
-        $\uparrow$ within $1^\circ$ of predicted location
-        \end{column}
-    \end{columns}
-    % cite LeVerrier himself: 1846
-    % Recherches sur les mouvements de la planète Herschel
-\footnotetext[1]{J.G. Galle, Monthly Notices of the Royal Astronomical Society 7 (1846): 153.}
-\end{frame}
-}
 
 \begin{frame}
     \frametitle{Warning}
@@ -422,7 +367,7 @@
 \footnotetext[1]{R. Woods \emph{et al.} Genetic Epidemiology (2003)24: 265–272}
 \footnotetext[2]{DGR. Evans \emph{et al.} Otology \& Neurotology (2005)26:93–97}
 \footnotetext[3]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans,
- https://doi.org/10.1101/2021.10.03.457528}}
+ https://doi.org/10.1038/s41416-022-01955-8}}
 % Evans 2005
 \end{frame}
 
@@ -467,7 +412,7 @@
     % Should explain around 80% of incidence well, huge improvement on CRC
     % model
 \footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans,
- https://doi.org/10.1101/2021.10.03.457528}}
+ https://doi.org/10.1038/s41416-022-01955-8}}
 \end{frame}
 
 \begin{frame}
@@ -507,57 +452,9 @@
     
     % Should explain around 80% of incidence well, huge improvement on CRC
     % model
-\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, 
+ https://doi.org/10.1038/s41416-022-01955-8}}
 \end{frame}
-
-
-%\begin{frame}
-%    \frametitle{Vestibular schwannoma incidence}
-%    \framesubtitle{Our model for sporadic VS}
-%    \begin{columns}
-%        \begin{column}{0.5\textwidth}
-%            \includegraphics[height=0.8\textheight]{figures/vsmodel-nochromosomes.pdf}
-%        \end{column}
-%        \begin{column}{0.5\textwidth}
-%        \begin{itemize}
-%            \item $\mathrlap{\textcolor{cyan}{\blacksquare}}\Box +
-%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ = have LOH on 22q
-%            \item frequency of LOH = $f_{LOH} = (
-%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
-%            + 
-%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-%            )/(
-%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
-%            + 
-%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-%            + 
-%            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
-%            )$
-%            \item $\mathrlap{\textcolor{yellow}{\blacksquare}}\Box$ =
-%            \emph{SMARCB1}${}^{-/-}$
-%            \item frequency of \emph{SMARCB1}${}^{-/-}$ = $f_{SMARCB1}$
-%
-%            \;
-%
-%            $= \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-%            /(
-%            \mathrlap{\textcolor{cyan}{\blacksquare}}\Box
-%            + 
-%            \mathrlap{\textcolor{yellow}{\blacksquare}}\Box
-%            + 
-%            \mathrlap{\textcolor{magenta}{\blacksquare}}\Box
-%            )$
-%
-%        \end{itemize}
-%
-%        Can use these to fix parameters!
-%        \end{column}
-%    \end{columns}
-%
-%    % interesting: could try fixing fSMARCB1 from looking at tumours WITH
-%    % LOH(22q) but WITHOUT additional insults to NF2, and assuming the VAF
-%    % detected is uncharacterised pathology? Ask Miriam.
-%\end{frame}
 
 \begin{frame}
     \frametitle{Vestibular schwannoma incidence}
@@ -612,7 +509,8 @@
             \includegraphics[width=1.0\textwidth]{figures/figure-5-3Hit-feb22}
         \end{column}
     \end{columns}
-\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, 
+ https://doi.org/10.1038/s41416-022-01955-8}}
 \end{frame}
 
 \begin{frame}
@@ -621,7 +519,7 @@
     % Figures from paper? i.e. bootstrapped distributions
 
     \begin{center}
-    \includegraphics[height=0.85\textheight]{figures/Fig3-combined-bw-feb22}
+    \includegraphics[height=0.85\textheight]{figures/Fig3-combined-bw-oct22}
 
     \;
 
@@ -686,7 +584,8 @@
         Malignant VS is \emph{extremely} rare!
     \end{center}
 
-\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, 
+ https://doi.org/10.1038/s41416-022-01955-8}}
 \end{frame}
 
 \begin{frame}
@@ -740,40 +639,63 @@
     \end{center}
 
     \begin{center}
-        \small{Probably multiple (10?) distinct tumour suppressors} 
-
-        \;
-
-        \huge{i.e. not (just) \emph{TP53}: $n_{TP53} = 73$}
+        \small{Probably multiple distinct tumour suppressors} 
 
         \;
 
         \small{Disclaimer: assumes neutrality \& haplosufficiency}
     \end{center}
 
-\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1101/2021.10.03.457528}}
+\footnotetext[1]{\tiny{C Paterson, I Bozic, MJ Smith, X Hoad, DGR Evans, https://doi.org/10.1038/s41416-022-01955-8}}
 \end{frame}
 
-% TODO skip if preprint not ready
-% TODO preprint is definitely not going to be ready
-%\begin{frame}
-%    \frametitle{DiGeorge syndrome}
-%    \framesubtitle{Ongoing work}
-%    % copy and paste figures from paper
-%    \begin{columns}
-%        \begin{column}{0.5\textwidth}
-%        % TS loss diagram here
-%        \end{column}
-%        \begin{column}{0.5\textwidth}
-%        % TS loss diagram with forbidden orders
-%        % 2 hit diagram
-%        \end{column}
-%    \end{columns}
-%
-%    \begin{center}
-%        Can (maybe) predict relative risk of schwannoma in rare syndrome
-%    \end{center}
-%\end{frame}
+\begin{frame}
+    \frametitle{Who is \emph{TSX}?}
+    \framesubtitle{Parameter estimates for $n_{TSX}$}
+    % bootstrapped histogram
+
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/TSXhistogram}
+    \end{center}
+
+    \begin{center}
+        \small{Probably multiple distinct tumour suppressors} 
+
+        \;
+
+        \huge{i.e. not (just) \emph{TP53}: $n_{TP53} = 73$}
+
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Who is \emph{TSX}?}
+    \framesubtitle{Parameter estimates for $n_{TSX}$}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        % Young diagram example
+        \includegraphics[width=\textwidth]{figures/Young_diagram}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+    How many genes are there in this set? Assuming $n_{TSX} = 1000$, estimate 
+
+    \begin{equation*}
+        h \approx \frac{\sqrt{6} \ln 2}{\pi} \sqrt{n_{TSX}} \approx 17
+    \end{equation*}
+
+    genes account for $\approx80\%$ of the total.
+        \end{column}
+    \end{columns}
+
+    \;
+
+    \begin{center}
+        \emph{Watch this space!}
+    \end{center}
+    
+\end{frame}
 
 \begin{frame}
     \frametitle{Main outputs}
@@ -793,107 +715,110 @@
         \item Identity of \emph{TSX} unknown
         \item Constraints weak: \emph{GFX} and \emph{TSX} probably multiple genes
     \end{enumerate}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Multiple genes}
-
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Recent progress: new algorithm!}
-
-    Laplace transform turns master equation in $\vec{N}$ into a wave equation in
-    $\vec{q}$:
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-        % TS loss diagram here
-        \begin{equation*}
-            \frac{d P(t,\vec{N})}{dt} = \sum_{j,k} \mu_{jk} N_j
-            P(t,\vec{N}') + \cdots
-        \end{equation*}
-        \begin{center}
-            $\downarrow$
-        \end{center}
-        \begin{equation*}
-            \frac{\partial \Psi}{\partial t} = \vec{X}\cdot \nabla \Psi
-        \end{equation*}
-
-        Much easier to solve: just numerical integration
-        \end{column}
-        \begin{column}{0.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/flowcube1}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{New algorithm}
-
-    Compare to sampling... Stochastic algorithms take
-    
-    \begin{equation}
-        N \sim \mathcal{O}(\epsilon^{-2})
-    \end{equation}
-    runs, and runtime $T \propto N$.
 
     \;
 
-    New algorithm runs in
-    \begin{equation}
-       T \sim \mathcal{O}(\epsilon^{-1/3})
-    \end{equation}
 
-    so new runtime $\sim \mathcal{O}\left(\right.$ old runtime
-    $\left.^{1/6}\right)$.
-\end{frame}
-
-\begin{frame}
-    \frametitle{New algorithm}
-
-    \includegraphics[width=\textwidth]{figures/Figure_1_newmethod.png}
+    \begin{center}
+        \emph{Need to identify $n_{GFX}$ and $n_{TSX}$}
+    \end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{To do list}
 
-    Experiments:
+    How to do this:
     \begin{itemize}
-        \item Sporadic VS to constrain $f_{SMARCB1}$: $n > 300$
-        \item Empirical CNA/NGS in MPNST (\textbf{rare!})?: $n > 30$
-        %\item Study to look at RR in 22q11.2DS: $n > 10000$
-        % Not going to be ready
+        \item Sequence all tumours in NF2 database in Manchester
     \end{itemize}
-    Theory:
+
+    \;
+
+\end{frame}
+\begin{frame}
+    \frametitle{To do list}
+
+    How to do this:
     \begin{itemize}
-        \item Convert $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
+        \item Sequence all tumours in NF2 database in Manchester
+        \item Detailed CNA data using David's lab's pipeline (learning now)
+    \end{itemize}
+
+    \;
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{To do list}
+
+    How to do this:
+    \begin{itemize}
+        \item Sequence all tumours in NF2 database in Manchester
+        \item Detailed CNA data using David's lab's pipeline (learning now)
+        \item Convert current $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
+        using \emph{integer partitions}
+    \end{itemize}
+
+    \;
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{To do list}
+
+    How to do this:
+    \begin{itemize}
+        \item Sequence all tumours in NF2 database in Manchester
+        \item Detailed CNA data using David's lab's pipeline (learning now)
+        \item Convert current $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
         using \emph{integer partitions}
         \item Implement new efficient algorithm in parameter inference with max.
         likelihood 
     \end{itemize}
+
+    \;
+
 \end{frame}
 
-%\begin{frame}
-%    \frametitle{The big picture}
-%    \framesubtitle{Why study malignant transformation in VS at all}
-%    \begin{center}
-%        Hi-res look at malignant transformation \emph{in slow motion}, usually
-%        impossible!
-%    \end{center}
-%
-%    \begin{center}
-%        What genes are responsible? Fundamentally interesting!
-%    \end{center}
-%    % solar eclipses are rare but resulted in
-%    % discovery of helium
-%    % discovery of general relativity
-%
-%% 1868 and 1919
-%\end{frame}
+\begin{frame}
+    \frametitle{To do list}
 
-%\include{neptune.tex}
+    How to do this:
+    \begin{itemize}
+        \item Sequence all tumours in NF2 database in Manchester
+        \item Detailed CNA data using David's lab's pipeline (learning now)
+        \item Convert current $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
+        using \emph{integer partitions}
+        \item Implement new efficient algorithm in parameter inference with max.
+        likelihood 
+        \item Train algorithm on database
+    \end{itemize}
+
+    \;
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{To do list}
+
+    How to do this:
+    \begin{itemize}
+        \item Sequence all tumours in NF2 database in Manchester
+        \item Detailed CNA data using David's lab's pipeline (learning now)
+        \item Convert current $n_{GFX}$ and $n_{TSX}$ to estimates for multiple genes
+        using \emph{integer partitions}
+        \item Implement new efficient algorithm in parameter inference with max.
+        likelihood 
+        \item Train algorithm on database
+    \end{itemize}
+
+    \;
+
+    \begin{center}
+        \emph{Just won funding for the above!}
+    \end{center}
+\end{frame}
+
 
 % Acknowledgements
 
