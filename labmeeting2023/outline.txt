@@ -1,0 +1,168 @@
+Title: Multi-stage clonal expansion on graphs
+
+30 mins
+
+So 15-20 slides
+
+Slides reused from talk at UCL:
+    3 -- Armitage and Doll
+    Add some history: 1950s at LSHTM
+    4 -- add a picture of retinoblastoma from Wellcome Trust
+    Add a mathematical slide:
+        What are the relevant observables in longitudinal studies?
+        ("a given cancer" = C)
+          * Age-specific incidence I(a) = # of new cases of C recorded during a
+            study, where the patients had ages in between $a$ and $a + da$
+          * Hazard function h(a): Rate at which people free from C at age $a$
+            develop C in the next period of time.
+          * Survival function S(a): proportion of people who have not been
+            diagnosed with C by age a. Starts at 1 and falls.
+        How are they related?
+          * Say the number of people who remain free from C by age $a$ is
+            $n(a)$. Then the incidence
+                I(a) = n(a) h(a) da
+            n(a) is actually determined by S,
+                n(a) = n(0) S(a)
+            where $n(0)$ is just the initial population of the cohort being
+            studied.
+            It is also true that the number of people who have developed C
+            during the period a, a+da is
+                n(a) - n(a + da)
+            So
+                I(a) = n(a) - n(a + da) = n(0) (S(a) - S(a + da))
+                ==> S(a) - S(a + da) = S(a) h(a) da
+                ==> h(a) = (S(a) - S(a + da)) / (S(a) da) --> -d \ln S / da
+        So what?
+            The survival curve S(a) determines everything else of interest.
+            The model determines the survival curve. The parameters determine
+            the model. We want to know what model+parameters best agree with
+            data from studies.
+            To fit (or ``train'') the model to longitudinal data, we need to compute $S(a)$!
+            This is the central problem of this talk. How do we compute $S$?
+    5 -- change title, summarise methods
+
+
+---
+Should detail what my method replaces:
+    Armitage & Doll's approach (Richard Doll)
+    Moolgavkar-Venzon approach: backwards equations and quadrature (S. Moolgavkar)
+    A&D's approximation: how it works
+        Assume all the probabilities are small
+        Then the relevant probability is expressible in terms of expected
+        values/population means
+        Don't need population correlations, variances or higher moments!
+        
+    Why is the mean-field approximation inadequate?
+        In old age, the approximation will fail -- it assumes the probabilities
+        are small, we cannot use it when we know the probabilities will be high.
+        Predicts that cancer risk should increase monotonically with age
+        (Which it doesn't -- it levels off (R. Meza))
+        Is this biologically significant? who knows????
+
+    The current "gold standard": Moolgavkar and Luebeck
+        Don't assume anything about probabilities or correlations.
+        Transform the equations, and try to solve for the distribution directly.
+
+    How it works:
+        Define a set of generating functions $Psi_k$ (one for each stem cell
+        population $k$):
+
+        \Psi_k(t,\vec{x}) := \mathbb{E}\left[\prod_j x_j^{N_j} | (1 cell started at k)\right]
+
+        Derive Kolmogorov backward equation to evolve this backwards in time:
+
+        d \Psi_k / dt = ... \Psi_k \; and \; \Psi_{k+1} ...
+
+        And we can compute the survival curve $S(a)$ from
+
+        S(a) = \Psi_0(a, 1, 1, 1, ..., 1, 0)
+
+        In fact, we get a recursive hierarchy of S curves for different models:
+
+        S_k(a) = exp(... \int_{z=0}^a S_{k+1}(z) ... dz)
+
+        which can be evaluated very efficiently with numerical integration.
+        (see: Bhat, Georg's package on R-CRAN).
+
+    Moolgavkar-Venzon approach:
+        Accurate at all ages, even when incidence is high
+        At ages larger than $1/s$, the hazard levels off. Cancer risk does NOT
+        increase indefinitely. This is empirically correct!
+        Fast to calculate stuff. Can calculate likelihoods efficiently with
+        Gaussian quadrature (not just least squares)
+
+---
+Re-use network models slide here (slide 5 UCL)
+So what's wrong with it?
+    Specialised to 2- and 3-hit clonal expansion models.
+    To have multiple parallel/branching mechanisms, we need to study multi-stage
+    clonal expansion models on graphs
+    What methods do we actually have?
+
+---
+Re-use CRC slides here (8-10)
+Two proposals: 
+    Gillespie algorithm + random sampling -- exact but VERY slow
+    Armitage & Doll-style approximation -- inappropriate in old age with high
+    incidence
+
+---
+My new idea (from 2017):
+    Define a generating function $\Psi$:
+
+    \Psi(t, \vec{q}) = \mathbb{E}[\left[\prod_j q_j^{N_j}\right]
+
+    and derive Kolmogorov FORWARD equations instead. Then we can numerically
+    integrate these, and get survival curves $S_i(a)$ for different types of
+    cancer $i$. E.G. tumours with clonal LOH, or no clonal LOH.
+
+    People knew about this approach for a long time (1988ish) but it was never
+    considered as useful as backward equations.
+
+---
+In and out, twenty minute adventure.
+
+Six years later...
+---
+
+---
+Re-use "Recent progress" slide from City 2022 presentation.
+
+How it works in detail:
+
+    Using the big generating function $\Psi$, find the Kolmogorov forward
+    equations:
+
+    d \Psi / dt = X dot nabla \Psi
+
+    This can be solved using the method of characteristics, so we can instead
+    integrate
+
+    d \vec{\gamma} / dt = X
+
+    numerically, using a method like improved Euler integration.
+
+---
+Re-use results slide from City 2022 presentation.
+    Gillespie algorithm vs fast forward method:
+    Gillespie: 3000s
+    Fast forward: 30ms (~1ms for same error)
+
+---
+Re-use and correct error slide from City 2022 presentation.
+Add additional error slide for older forward methods (Quinn's method).
+
+Finally: slide with parameter inference
+    Ongoing!
+    Can use fast forward method to quickly compute likelihoods
+    Can then try different parameters in e.g. simulated annealing, and maximise
+        the likelihood!
+    This process can run in about a minute -- this would be impossible with
+        Gillespie's algorithm and e.g. ABC.
+
+Gets the right order of magnitude for some parameters, but 
+    Very sensitive to choice of neighbours and 
+    Very sensitive to cooling schedule. 
+    Some parameters (N_0) are not identifiable. 
+WIP.
+
