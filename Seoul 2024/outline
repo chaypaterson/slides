@@ -1,0 +1,28 @@
+
+Evolution on graphs and the transition to cancer
+
+Big question of the talk: when do driver mutations occur? How can we capture
+different orders and the explosive randomness of biology?
+
+Intro:
+    Differential equations:
+    * below a certain scale, the structure of a material or field is
+    * unimportant, and it behaves as a continuum.
+    * Examples:
+    * Fluid mechanics and acoustics
+    Driver mutations:
+    * less than 5 SNVs in a single strand of DNA can result in enormous
+      phenotypic changes.
+    * Examples:
+    * COVID-19 jumping to humans from animals
+    * Brain tumours (majority of cancers are clonal, descending from a single cell)
+
+    * We can't seriously believe that differential equations can meaningfully
+      capture this kind of explosive evolution. Except for setting initial
+      conditions, differential equations are too deterministic to describe
+      the enormous effect of mutation + selection -- the initial
+      conditions only become knowable when it is too late, and the patient is
+      already dead. I think we are just hoping that because diff eqs. are
+      understood well, and biology is understood poorly, that our understanding
+      of maths will "infect" biology and make biology better understood by
+      association.
