@@ -1,0 +1,12 @@
+Main additions:
+    * add bit on intuition for why the wave equation works
+    * KFE/master eqn has a local causal structure in state space
+    * small changes to the probability will propagate outwards
+    * regenerate porkchop plots
+    * add videos
+
+Also reorder slides:
+    * delete first intro slide
+    * move graphs after study description
+    * "so what" --> "diagnosis free survival: the relevant curve"
+        * also move the graph off that slide to the next
