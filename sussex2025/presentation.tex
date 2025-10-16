@@ -172,7 +172,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Armitage \& Doll 1957}
+    \frametitle{e.g. Armitage \& Doll 1957}
 
     \includegraphics[width=1.00\textwidth]{figures/diagram3}
 
@@ -273,32 +273,9 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Alternative approach: Kolmogorov forward equations}
-    Define a more general generating function $\Psi$:
-
-    \begin{equation}
-        \Psi(t, \vec{q}) = \mathbb{E}\left[\prod_j q_j^{N_j}\right] =
-        \sum_{\vec{N}} \prod_j q_j^{N_j} P(t, \vec{N})
-    \end{equation}
-
-    (the sum is taken over states $\vec{N} := (N_0, \dots)$) and derive Kolmogorov forward equations instead. Then we can numerically
-    integrate these, and get survival curves $S_i(a)$ for different types of
-    cancer $i$. E.G. tumours with clonal LOH, or no clonal LOH.
-
-    \begin{equation}
-        S_i = \Psi(t, q_j =1, \dots, q_i = 0)
-    \end{equation}
-    People knew about this approach for a long time (since 1970s) but it was never
-    considered as useful as backward equations.
-
-\footnotetext[1]{SH Moolgavkar and DJ Venzon, Math. biosc. 1979; 47(1): 55-77}
-\footnotetext[2]{DW Quinn, Risk Analysis 1989; 9(3): 407-13}
-\end{frame}
-
-\begin{frame}
     \frametitle{Intuition}
     %: why should Kolmogorov forward equations have associated wave equations at all?
-    general form of master equation is
+    general form of master equation is\footnotemark[1]
     \begin{equation}
         \frac{dP(t, \vec{N})}{dt} = \sum_{\vec{N'}} \left(
         \omega(\vec{N'} \rightarrow \vec{N}) P(t, \vec{N'})
@@ -308,11 +285,12 @@
     if $\omega > 0$ only for ``nearby'' states $\vec{N'}$ then...
 
     \includegraphics[width=0.8\textwidth]{figures/intuition}
+\footnotetext[1]{Van Kampen, N.G., 1992. Stochastic processes in physics and chemistry (Vol. 1). Elsevier.}
 \end{frame}
 
 \begin{frame}
     \frametitle{Intuition}
-    general form of master equation is
+    general form of master equation is\footnotemark[1]
     \begin{equation}
         \frac{dP(t, \vec{N})}{dt} = \sum_{\vec{N'}} \left(
         \omega(\vec{N'} \rightarrow \vec{N}) P(t, \vec{N'})
@@ -322,11 +300,13 @@
     if $\omega > 0$ only for ``nearby'' states $\vec{N'}$ then...
 
     \includegraphics[width=0.8\textwidth]{figures/intuition2}
+
+\footnotetext[1]{Van Kampen, N.G., 1992. Stochastic processes in physics and chemistry (Vol. 1). Elsevier.}
 \end{frame}
 
 \begin{frame}
     \frametitle{Intuition}
-    general form of master equation is
+    general form of master equation is\footnotemark[1]
     \begin{equation}
         \frac{dP(t, \vec{N})}{dt} = \sum_{\vec{N'}} \left(
         \omega(\vec{N'} \rightarrow \vec{N}) P(t, \vec{N'})
@@ -336,11 +316,13 @@
     if $\omega > 0$ only for ``nearby'' states $\vec{N'}$ then...
 
     \includegraphics[width=0.8\textwidth]{figures/intuition3}
+
+\footnotetext[1]{Van Kampen, N.G., 1992. Stochastic processes in physics and chemistry (Vol. 1). Elsevier.}
 \end{frame}
 
 \begin{frame}
     \frametitle{Intuition}
-    general form of master equation is
+    general form of master equation is\footnotemark[1]
     \begin{equation}
         \frac{dP(t, \vec{N})}{dt} = \sum_{\vec{N'}} \left(
         \omega(\vec{N'} \rightarrow \vec{N}) P(t, \vec{N'})
@@ -350,6 +332,8 @@
     if $\omega > 0$ only for ``nearby'' states $\vec{N'}$ then...
 
     \includegraphics[width=0.8\textwidth]{figures/intuition4}
+
+\footnotetext[1]{Van Kampen, N.G., 1992. Stochastic processes in physics and chemistry (Vol. 1). Elsevier.}
 \end{frame}
 
 \begin{frame}
@@ -366,6 +350,30 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Alternative approach: Kolmogorov forward equations}
+    Define a more general generating function $\Psi$:
+
+    \begin{equation}
+        \Psi(t, \vec{q}) = \mathbb{E}\left[\prod_j q_j^{N_j}\right] =
+        \sum_{\vec{N}} \prod_j q_j^{N_j} P(t, \vec{N})
+    \end{equation}
+
+    (the sum is taken over states $\vec{N} := (N_0, \dots)$) and derive Kolmogorov forward equations instead. Then we can numerically
+    integrate these, and get survival curves $S_i(a)$ for different types of
+    cancer $i$. e.g. tumours with clonal LOH, or no clonal LOH.
+
+    \begin{equation}
+        S_i = \Psi(t, q_j =1, \dots, q_i = 0)
+    \end{equation}
+    People knew about this approach for a long time (since 1970s) but it was never
+    considered as useful as backward equations.
+
+\footnotetext[1]{SH Moolgavkar and DJ Venzon, Math. biosc. 1979; 47(1): 55-77}
+\footnotetext[2]{DW Quinn, Risk Analysis 1989; 9(3): 407-13}
+\end{frame}
+
+
+\begin{frame}
     \frametitle{Kolmogorov forward equations as wave equations}
 
     \begin{center}
@@ -377,16 +385,15 @@
         \frac{d P(N_0, N_1, \dots)}{dt} &= \sum_{vertices} \alpha (N_j - 1)
         P(\dots, N_j - 1, \dots) \nonumber \\
         &\; - \alpha N_j P(\dots, N_j, \dots) \nonumber \\
-        &\; + \beta \cdots + \mu \cdots + \delta \cdots \nonumber
+        &\; + \beta (\cdots) + \mu (\cdots) + \delta (\cdots) \nonumber
     \end{align}
 
-    get transformed...
+    get transformed with $P \rightarrow \Psi$ into...
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Kolmogorov forward equations as wave equations}
-    They transform with $P \rightarrow \Psi$:
     \begin{equation}
         \frac{\partial \Psi}{\partial t} = \sum_{vertices} \alpha (q_j - 1) q_j
         \frac{\partial \Psi}{\partial q_j} + \dots = \mathcal{H}\Psi
@@ -405,20 +412,20 @@
 
     \begin{columns}
         \begin{column}{0.5\textwidth}
-    Using the big generating function $\Psi$, find the corresponding wave
-    equation:
+        Using the big generating function $\Psi$, find the corresponding wave
+        equation:
 
-    \begin{equation}
-        \frac{d \Psi}{ dt} = \mathcal{H} \Psi
-    \end{equation}
+        \begin{equation}
+            \frac{\partial \Psi}{\partial t} = \mathcal{H} \Psi
+        \end{equation}
 
-    This can be solved using the method of characteristics, so we can instead
-    integrate
+        When $\mathcal{H} = \vec{X} \cdot \nabla$ this can be solved using the method of characteristics, so we can instead
+        integrate
 
-    \begin{equation}
-        \frac{d \vec{\gamma}}{ dt} = \vec{X}
-    \end{equation}
-    numerically, using an appropriate time stepper.
+        \begin{equation}
+            \frac{d \vec{\gamma}}{ dt} = \vec{X}
+        \end{equation}
+        numerically, using an appropriate time stepper.
 
 
         \end{column}
@@ -616,7 +623,7 @@
 
         \end{column}
         \begin{column}{0.5\textwidth}
-        All my collaborators...
+        All my coworkers...
 
         \begin{itemize}
             \item Ivana Bo\v{z}i\'{c}
@@ -626,6 +633,8 @@
             \item Miriam Smith
             \item Marian Love
             \item Joshua Hellier
+            \item Vivien Holmes
+            \item Ramishka D. Liyanage
         \end{itemize}
 
         \end{column}
