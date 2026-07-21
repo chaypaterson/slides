@@ -1,0 +1,35 @@
+notes for slides (5pm ACED monthly mtg)
+
+downstream analysis
+
+what i want to analyse: age structure and combinatorial risk factors.
+
+biallelic loss of different tumour suppressors -- studied using age structured models. age structure gives us some estimate of the dynamics of mutations - rates and fitnesses (exp. growth rates in %/yr) - as well as the rate-limiting steps involved (see Rb)
+
+BUT classical age structured
+models can't distinguish between different variants, or different orders of
+events. different combinations of these can result in loss, but may also
+represent different degrees of pathogenicity (risk).
+
+we can represent different orders of events with directed graphs. the
+rates/probabilities of doing these are labels on the edges.
+
+example: drinking a coffee and getting on a train can be done in either orders.
+
+i would also like to structure on specific alterations. separate out p53 (to
+start), and look at different types of sequence modification -- i know it will
+be possible to distinguish with copy
+number changes, and smaller alterations. if we can call different mutational
+signatures and battenberg, we should be able to represent the different
+combinations of events with these graphical models.
+
+(i am also interested in clock-like signatures recently so i would definitely
+like to see SBS1 called.)
+
+then we can also look at different genes, and we can look at combinatorial structure and different orders of events. maybe it is worse to lose KRAS before p53? opportunity for early detection.
+
+Wed  5 Mar 17:27:40 GMT 2025
+
+from meeting:
+
+https://docs.google.com/spreadsheets/d/1FHl5y4n2thvt01DPGbhe4pzM9aTDm6sqjSvD89WFBcE/edit?pli=1&gid=0#gid=0
